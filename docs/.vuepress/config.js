@@ -13,6 +13,15 @@ module.exports = {
     logo: "/logo.png",
     nav: [
       {
+        text: "个人简历",
+        link: "/my/my"
+      },
+      {
+        text: "掘金",
+        link: "https://juejin.im/user/592418062f301e006b2db045",
+        target: "_blank"
+      },
+      {
         text: "GitHub",
         link: "https://github.com/huabingtao",
         target: "_blank"
@@ -20,7 +29,7 @@ module.exports = {
     ],
     sidebarDepth: 6,
     displayAllHeaders: false,
-    sidebar: ["/node/diary"],
+    // sidebar: ["/node/diary", "/my/my"],
     smoothScroll: true // 页面滚动
   },
   lastUpdated: "Last Updated", // string | boolean

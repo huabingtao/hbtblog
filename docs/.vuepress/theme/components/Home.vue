@@ -29,66 +29,71 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue'
-import Article from './Article'
-import { cloneDeep } from 'loadsh'
+import NavLink from "@theme/components/NavLink.vue";
+import Article from "./Article";
+import { cloneDeep } from "loadsh";
 
 export default {
   data() {
     return {
       arts: [],
       tags: []
-    }
+    };
   },
   components: { NavLink, Article },
   created() {
-    this.initTag()
+    this.initTag();
   },
   computed: {
     data() {
-      return this.$page.frontmatter
+      return this.$page.frontmatter;
     }
   },
   methods: {
     initTag() {
-      let arts = cloneDeep(this.$site.pages)
-      this.originArts = cloneDeep(this.$site.pages)
+      let arts = cloneDeep(this.$site.pages);
+      console.log(this.$site);
+      this.originArts = cloneDeep(this.$site.pages);
       arts = arts.filter(art => {
-        if (art.title === 'Home') {
-          return false
+        console.log(art.frontmatter.show);
+        if (art.title === "Home") {
+          return false;
         }
-        return true
-      })
-      this.arts = arts
+        if (!art.frontmatter.show) {
+          return false;
+        }
+        return true;
+      });
+      this.arts = arts;
 
-      let allTags = []
+      let allTags = [];
       arts.forEach(art => {
         if (!art.frontmatter.tags) {
-          return
+          return;
         }
-        allTags.push(...art.frontmatter.tags)
-      })
-      let flatTags = Array.from(new Set(allTags))
+        allTags.push(...art.frontmatter.tags);
+      });
+      let flatTags = Array.from(new Set(allTags));
       let tags = flatTags.reduce((res, v) => {
-        let o = {}
-        o.tag = v
-        o.number = allTags.filter(value => value === v).length
-        res.push(o)
-        return res
-      }, [])
-      this.tags = tags
+        let o = {};
+        o.tag = v;
+        o.number = allTags.filter(value => value === v).length;
+        res.push(o);
+        return res;
+      }, []);
+      this.tags = tags;
     },
     onClickTag(tagName) {
       let arts = this.originArts.filter(art => {
         if (!art.frontmatter.tags) {
-          return false
+          return false;
         }
-        return art.frontmatter.tags.includes(tagName)
-      })
-      this.arts = arts
+        return art.frontmatter.tags.includes(tagName);
+      });
+      this.arts = arts;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>

@@ -16,12 +16,12 @@
               </ul>
             </div>
             <div class="info-row">
-              <div class="title">{{ art.frontmatter.heroText }}</div>
+              <div class="title">{{ art.frontmatter.title }}</div>
             </div>
             <div class="info-row title-row">{{ art.frontmatter.tagline }}</div>
           </div>
           <div class="img">
-            <img :src="art.frontmatter.heroImage" width="100%" />
+            <img :src="art.frontmatter.img" width="100%" />
           </div>
         </div>
       </router-link>
@@ -31,8 +31,8 @@
 
 <script>
 export default {
-  props: ['arts']
-}
+  props: ["arts"]
+};
 </script>
 
 <style lang="stylus" scoped>
