@@ -3,7 +3,7 @@ tags:
   - js
   - React
   - Node
-heroImage: 'http://user-gold-cdn.xitu.io/2020/2/4/17010bc219f82cdc?imageView2/2/w/480/h/480/q/85/interlace/1'
+heroImage: "http://user-gold-cdn.xitu.io/2020/2/4/17010bc219f82cdc?imageView2/2/w/480/h/480/q/85/interlace/1"
 heroText: React + node + koa2 全栈应用
 tagline: 打造日记本应用 进阶大前端
 ---
@@ -14,7 +14,7 @@ tagline: 打造日记本应用 进阶大前端
 
 # 项目截图
 
-![](http://user-gold-cdn.xitu.io/2020/2/4/17010b79ceb48b2f?w=1915&h=1956&f=png&s=456604)
+![](http://file.huabingtao.com/juejin/nodeKoa/1.jpeg)
 
 # 源码获取
 
@@ -73,17 +73,17 @@ tagline: 打造日记本应用 进阶大前端
 
 ```js
 // app.js
-const Koa = require('koa')
-const app = new Koa()
-app.listen(3000)
-console.log('listen 3000')
+const Koa = require("koa");
+const app = new Koa();
+app.listen(3000);
+console.log("listen 3000");
 ```
 
 打开命令行执行 `node app.js`
 
 如果终端有打印 `listen 3000` node 监听了 3000 端口，接下来打开浏览器输入 _http://localhost:3000/_ 如果浏览器返回如图
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/170149d2e8d755df?w=1578&h=508&f=png&s=44071)
+![](http://file.huabingtao.com/juejin/nodeKoa/2.jpeg)
 说明我们的服务器已经成功启动了但为什么返回 **Not Found** 因为我们的服务确实是什么都没返回啊！！！！
 
 接下来我们写点东西让 node 返回点东西给前端! **app.js** 修改后
@@ -101,7 +101,7 @@ console.log('listen 3000')
 
 再次访问*http://localhost:3000/* 不出意外你会看到
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/17014b0217f8c3aa?w=1638&h=674&f=png&s=64652)
+![](http://file.huabingtao.com/juejin/nodeKoa/3.jpeg)
 
 ### 3) 使用 koa-router
 
@@ -122,7 +122,7 @@ console.log('listen 3000')
 
 打开浏览器访问 http://localhost:3000/hello 不出意外如下图所示:
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/17014cf7a3dbd4b2?w=1414&h=394&f=png&s=42247)
+![](http://file.huabingtao.com/juejin/nodeKoa/4.jpeg)
 
 浏览器输出了 hello koa 用 koa-router 写接口要比 node 原生的更**简洁**
 
@@ -140,9 +140,9 @@ nodemon 可以让我们改变代码后不需要手动重启服务，它会在我
 
 2 打开 vscode 点击左边的爬虫选择创建**lunch.json**文件，接着选择 Node.js 环境
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/170154d5362a4066?w=708&h=882&f=png&s=50488)
+![](http://file.huabingtao.com/juejin/nodeKoa/5.jpeg)
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/170154d8547fb705?w=1454&h=312&f=png&s=47189)
+![](http://file.huabingtao.com/juejin/nodeKoa/6.jpeg)
 
 3 打开**lunch.js**文件 把配置改为**nodemon** 去监听进程
 
@@ -175,19 +175,19 @@ nodemon 可以让我们改变代码后不需要手动重启服务，它会在我
 
 4 配置完成后把选项切换为**nodemon** 点击调试按钮就是那个播放按钮
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/1701551c5cbfe655?w=870&h=696&f=png&s=123949)
+![](http://file.huabingtao.com/juejin/nodeKoa/7.jpeg)
 
 如果你看到控制台有如下输出，那么 nodemon 已经运行成功了。
 
 现在你随便改几行代码保存一下就会发现**nodemon**在自动帮我们重启，偷懒的感觉怎么样。
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/1701552d10c7ef3e?w=1524&h=450&f=png&s=75747)
+![](http://file.huabingtao.com/juejin/nodeKoa/8.jpeg)
 
 ### 5) 构建项目目录
 
 一个好的的项目必须要有合理的目录，新建如下图一些文件夹。
 
-![](http://user-gold-cdn.xitu.io/2020/2/5/170148e702531c93?w=892&h=584&f=png&s=54690)
+![](http://file.huabingtao.com/juejin/nodeKoa/9.jpeg)
 
 接下来会和大家解释这些目录的用处不要捉急！！😸😸
 
@@ -253,13 +253,13 @@ console.log('listen 3000')
 
 打开 http://localhost:3000/test 不出意外的话浏览器显示如下图:
 
-![](http://user-gold-cdn.xitu.io/2020/2/6/17018a55eb0c191e?w=1506&h=506&f=png&s=35611)
+![](http://file.huabingtao.com/juejin/nodeKoa/10.jpeg)
 
 现在我们已经可以完成**动态注册路由**了，只要我们把路由写在**api**文件夹下程序就会自动帮我们注册。
 
 ### 7) 全局异常捕获
 
-当我们程序出了故障应该明确地提示给前端用户也方便我们调试代码。我们使用**中间件**的方式写全局异常捕获，这需要了解**node.js**著名的**洋葱模型**，因为不是本节课重点所以不会详细讲解它。如果不懂什么是洋葱模型的话一定要先去了解清楚！！
+当我们程序出了故障应该明确地提示给前端用户也方便我们调试代码。我们使用**中间件**的方式写全局异常捕获，这需要了解**koa2**著名的**洋葱模型**，因为不是本节课重点所以不会详细讲解它。如果不懂什么是洋葱模型的话一定要先去了解清楚！！
 
 第一步 在 config 文件夹下新建 **config.js** 写入代码:
 
@@ -402,11 +402,11 @@ module.exports = router
 
 刷新浏览器查看如果浏览器出现 Internal Server Error:
 
-![](http://user-gold-cdn.xitu.io/2020/2/6/170191ea7c419214?w=1504&h=460&f=png&s=38339)
+![](http://file.huabingtao.com/juejin/nodeKoa/11.jpeg)
 
 打开控制台查看:
 
-![](http://user-gold-cdn.xitu.io/2020/2/6/170192052f736d10?w=1454&h=434&f=png&s=106567)
+![](http://file.huabingtao.com/juejin/nodeKoa/12.jpeg)
 
 我们已经成功捕获到了非**http 异常**，一般这样的异常是不曝露给用户看到的研发自己知道就可以了。接下来我们用测试代码演示抛出一个**http 异常**。
 
@@ -432,7 +432,7 @@ module.exports = router
 
 刷新 http://localhost:3000/test 如图:
 
-![](http://user-gold-cdn.xitu.io/2020/2/6/1701926be1dd7870?w=1504&h=402&f=png&s=47004)
+![](http://file.huabingtao.com/juejin/nodeKoa/13.jpeg)
 
 此时我们已经成功捕获到了异常并成功返回给了前端。
 
@@ -617,7 +617,7 @@ module.exports = router
 
 运行 nodemon 在 postman 测试一下先输入一些错误的参数:
 
-![](http://user-gold-cdn.xitu.io/2020/2/6/17019c1a6057a7f3?w=1598&h=1202&f=png&s=137519)
+![](http://file.huabingtao.com/juejin/nodeKoa/14.jpeg)
 
 可以看到校验器可以成功运行，接下来就是编写业务代码往数据库插入数据了。
 
@@ -755,11 +755,11 @@ module.exports = router
 
 用 postman 调用一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701b6c0e1c9235d?w=1588&h=1180&f=png&s=128637)
+![](http://file.huabingtao.com/juejin/nodeKoa/15.jpeg)
 
 返回 Not Found 刷新下 user 表:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701b6d51e8f9c7f?w=2140&h=394&f=png&s=245494)
+![](http://file.huabingtao.com/juejin/nodeKoa/16.jpeg)
 
 这条记录已经产生我们还需要给客户端一个明确的成功提示
 
@@ -836,7 +836,7 @@ module.exports = router
 
 接着我们改变点参数通过**postman**调用一下结果应该能正确返回:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701b75e40581fed?w=1598&h=1234&f=png&s=136523)
+![](http://file.huabingtao.com/juejin/nodeKoa/17.jpeg)
 
 ok 成功地返回出了 **message errorCode 和 requestUrl**
 
@@ -997,7 +997,7 @@ module.exports = {
 
 ### 2）编写 diary 校验器
 
-> diary 对应的接口就必要多了因此校验器也比较多，增删改查我们都要对参数进行校验。
+> diary 对应的接口就比较多了因此校验器也比较多，日记的增删改查我们都要对参数进行校验。
 
 打开**validators**目录下的**validator.js** 完整代码如下:
 
@@ -1123,11 +1123,11 @@ module.exports = router
 
 **postman**调用一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701dfb9a62c0b36?w=1720&h=1296&f=png&s=146260)
+![](http://file.huabingtao.com/juejin/nodeKoa/18.jpeg)
 
 刷新 Navicat 后新增一条记录
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701dfc37fc63006?w=1880&h=248&f=png&s=121489)
+![](http://file.huabingtao.com/juejin/nodeKoa/19.jpeg)
 
 ## 查看日记
 
@@ -1188,7 +1188,7 @@ module.exports = router
 
 使用**postman**调用一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701e205b2de73da?w=1572&h=630&f=png&s=83261)
+![](http://file.huabingtao.com/juejin/nodeKoa/20.jpeg)
 
 ok 成功查出日记并且**look_nums**也增加了 1。
 
@@ -1283,11 +1283,11 @@ module.exports = router
 
 用**postman**调试一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701e3c3508b68aa?w=1636&h=1040&f=png&s=125712)
+![](http://file.huabingtao.com/juejin/nodeKoa/21.jpeg)
 
 **Navicate** 刷新**favor**表查看:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701e3d3078c2364?w=2082&h=348&f=png&s=195238)
+![](http://file.huabingtao.com/juejin/nodeKoa/22.jpeg)
 
 ## 日记列表
 
@@ -1426,7 +1426,7 @@ module.exports = router
 
 用**postman**测试一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701e712e685fea4?w=1796&h=820&f=png&s=107574)
+![](http://file.huabingtao.com/juejin/nodeKoa/23.jpeg)
 
 其中 **isFavor** 就是点赞状态：0 为没点赞 1 为点赞
 
@@ -1544,7 +1544,7 @@ router.get('/', GetDiaryValidator, async ctx => {
 
 **postman**跑一下:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701e7c6166a5f8f?w=2110&h=826&f=png&s=122944)
+![](http://file.huabingtao.com/juejin/nodeKoa/24.jpeg)
 
 到这里日记列表开发完成了还剩下删除日记更新日记两个功能大家加油！
 
@@ -1584,7 +1584,7 @@ router.put('/', PutDiaryValidator, async ctx => {
 
 用 postman 运行:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701ebf4584b9779?w=1700&h=1052&f=png&s=118536)
+![](http://file.huabingtao.com/juejin/nodeKoa/25.jpeg)
 
 更新成功
 
@@ -1621,11 +1621,11 @@ router.delete('/', async ctx => {
 
 运行 postman 调用接口:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701ece532ae81a1?w=1634&h=972&f=png&s=108311)
+![](http://file.huabingtao.com/juejin/nodeKoa/26.jpeg)
 
 刷新 Navicate:
 
-![](http://user-gold-cdn.xitu.io/2020/2/7/1701ed436efa355f?w=2208&h=354&f=png&s=202271)
+![](http://file.huabingtao.com/juejin/nodeKoa/27.jpeg)
 
 删除日记成功！
 
@@ -1640,5 +1640,3 @@ router.delete('/', async ctx => {
 - 结构化组件化开发项目
 
 最后，感谢您阅读这篇文章，有任何问题或反馈请给我留言。
-
-=
