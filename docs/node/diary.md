@@ -5,7 +5,7 @@ tags:
   - js
   - React
   - Node
-img: "http://user-gold-cdn.xitu.io/2020/2/4/17010bc219f82cdc?imageView2/2/w/480/h/480/q/85/interlace/1"
+img: "http://file.huabingtao.com/juejin/nodeKoa/shouye.png"
 title: React + node + koa2 全栈应用
 tagline: 打造日记本应用 进阶大前端
 ---

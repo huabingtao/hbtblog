@@ -2,7 +2,7 @@ module.exports = {
   title: "Hbt'blog",
   base: "/",
   description: "Vue React Node Koa2",
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: `./favicon.ico` }]],
   port: "2020",
   tags: "/tags",
   markdown: {
