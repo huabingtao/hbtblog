@@ -17,7 +17,6 @@ sidebarDepth: 5
 - 掘金：https://juejin.im/user/592418062f301e006b2db045
 - Github：https://github.com/huabingtao
 - 期望职位：web 前端工程师(vue+react 方向)
-- 期望薪资：税前月薪 20k~25k
 - 期望城市：上海
 
 # 技能清单

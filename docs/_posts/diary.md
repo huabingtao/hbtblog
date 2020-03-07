@@ -1,13 +1,12 @@
 ---
-show: true
-sidebar: auto
+title: React + node + koa2 搭建笔记本
+date: 2020-02-01
 tags:
   - js
   - React
   - Node
-img: "http://file.huabingtao.com/juejin/nodeKoa/shouye.png"
-title: React + node + koa2 全栈应用
-tagline: 打造日记本应用 进阶大前端
+author: Richard_hua
+location: ShangHai
 ---
 
 # 前言
