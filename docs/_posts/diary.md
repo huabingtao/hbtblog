@@ -213,43 +213,41 @@ module.exports = router
 
 第三步 在根目录下的 core 文件夹下新建 **init.js** 写入如下代码:
 
-```
+```js
 // core/init.js
-const Router = require('koa-router')
-const Directory = require('require-directory')
+const Router = require("koa-router");
+const Directory = require("require-directory");
 
 class InitManager {
   static initCore(app) {
-    InitManager.app = app
-    InitManager.initLoadRouters()
+    InitManager.app = app;
+    InitManager.initLoadRouters();
   }
 
   static initLoadRouters() {
     function checkRouter(obj) {
       if (obj instanceof Router) {
-        InitManager.app.use(obj.routes())
+        InitManager.app.use(obj.routes());
       }
     }
-    const path = process.cwd()
-    Directory(module, `${path}/app/api`, { visit: checkRouter })
+    const path = process.cwd();
+    Directory(module, `${path}/app/api`, { visit: checkRouter });
   }
 }
 
-module.exports = InitManager
-
+module.exports = InitManager;
 ```
 
 第四步 改造**app.js** 重启程序
 
-```
+```js
 // app.js
-const Koa = require('koa')
-const InitManager = require('./core/init')
-const app = new Koa()
-InitManager.initCore(app)
-app.listen(3000)
-console.log('listen 3000')
-
+const Koa = require("koa");
+const InitManager = require("./core/init");
+const app = new Koa();
+InitManager.initCore(app);
+app.listen(3000);
+console.log("listen 3000");
 ```
 
 打开 http://localhost:3000/test 不出意外的话浏览器显示如下图:
@@ -264,26 +262,26 @@ console.log('listen 3000')
 
 第一步 在 config 文件夹下新建 **config.js** 写入代码:
 
-```
+```js
 // config/config.js
 module.exports = {
   // prod
-  environment: 'dev'
-}
+  environment: "dev"
+};
 ```
 
 第二步 打开 core 文件夹下的**init.js** 完整代码如下:
 
-```
+```js
 // core/init.js
-const Router = require('koa-router')
-const Directory = require('require-directory')
+const Router = require("koa-router");
+const Directory = require("require-directory");
 
 class InitManager {
   static initCore(app) {
-    InitManager.app = app
-    InitManager.initLoadRouters()
-    InitManager.initLoadConfig()
+    InitManager.app = app;
+    InitManager.initLoadRouters();
+    InitManager.initLoadConfig();
   }
 
   static initLoadRouters() {
@@ -291,55 +289,54 @@ class InitManager {
       // console.log('obj', obj)
 
       if (obj instanceof Router) {
-        InitManager.app.use(obj.routes())
+        InitManager.app.use(obj.routes());
       }
     }
-    const path = process.cwd()
-    Directory(module, `${path}/app/api`, { visit: checkRouter })
+    const path = process.cwd();
+    Directory(module, `${path}/app/api`, { visit: checkRouter });
   }
 
   static initLoadConfig() {
-    const path = process.cwd() + '/config/config.js'
-    global.config = require(path)
+    const path = process.cwd() + "/config/config.js";
+    global.config = require(path);
   }
 }
 
-module.exports = InitManager
-
+module.exports = InitManager;
 ```
 
 第二步 在 core 下新建**http-exception.js** 写入代码:
 
-```
+```js
 // core/http-exception.js
 class HttpException extends Error {
-  constructor(msg = '服务器异常', code = 400, errorCode = 10001) {
-    super()
-    this.msg = msg
-    this.code = code
-    this.errorCode = errorCode
+  constructor(msg = "服务器异常", code = 400, errorCode = 10001) {
+    super();
+    this.msg = msg;
+    this.code = code;
+    this.errorCode = errorCode;
   }
 }
 
 module.exports = {
   HttpException
-}
+};
 ```
 
 第三步 在根目录下的**middlewares**文件夹下新建**exception.js** 写入代码:
 
-```
+```js
 // middlewares/exception.js
-const { HttpException } = require('../core/http-exception')
+const { HttpException } = require("../core/http-exception");
 const catchError = async (ctx, next) => {
   try {
-    await next()
+    await next();
   } catch (error) {
-    const isHttpException = error instanceof HttpException
-    const isDev = global.config.environment === 'dev'
+    const isHttpException = error instanceof HttpException;
+    const isDev = global.config.environment === "dev";
     if (isDev) {
       if (!isHttpException) {
-        throw error
+        throw error;
       }
     }
 
@@ -348,57 +345,57 @@ const catchError = async (ctx, next) => {
         message: error.msg,
         errorCode: error.errorCode,
         requestUrl: `${ctx.method} ${ctx.path}`
-      }
-      ctx.status = error.code
+      };
+      ctx.status = error.code;
     } else {
       ctx.body = {
-        message: '服务器发生了点问题请稍后再试',
-        errorCode: '9999',
+        message: "服务器发生了点问题请稍后再试",
+        errorCode: "9999",
         requestUrl: `${ctx.method} ${ctx.path}`
-      }
-      ctx.status = 500
+      };
+      ctx.status = 500;
     }
   }
-}
+};
 
-module.exports = catchError
+module.exports = catchError;
 ```
 
 第四步 修改**app.js** 完整代码如下:
 
-```
+```js
 // app.js
-const Koa = require('koa')
-const bodyParser = require('koa-bodyparser') // 获取Body参数
-const InitManager = require('./core/init') //动态注册路由 || 全局挂载config
-const catchError = require('./middlewares/exception') // 全局异常
-const cors = require('koa2-cors') // 解决跨域
+const Koa = require("koa");
+const bodyParser = require("koa-bodyparser"); // 获取Body参数
+const InitManager = require("./core/init"); //动态注册路由 || 全局挂载config
+const catchError = require("./middlewares/exception"); // 全局异常
+const cors = require("koa2-cors"); // 解决跨域
 
-const app = new Koa()
+const app = new Koa();
 
-app.use(cors())
-app.use(catchError)
-app.use(bodyParser())
-InitManager.initCore(app)
-app.listen(3000)
+app.use(cors());
+app.use(catchError);
+app.use(bodyParser());
+InitManager.initCore(app);
+app.listen(3000);
 ```
 
 接下来我们修改下 api 文件夹下的 test.js 测试代码抛出一个服务端异常:
 
-```
+```js
 // api/test.js
-const Router = require('koa-router')
+const Router = require("koa-router");
 
 const router = new Router({
-  prefix: '/test'
-})
+  prefix: "/test"
+});
 
-router.get('/', async ctx => {
-  throw new Error('抛出异常')
-  ctx.body = '测试'
-})
+router.get("/", async ctx => {
+  throw new Error("抛出异常");
+  ctx.body = "测试";
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 刷新浏览器查看如果浏览器出现 Internal Server Error:
@@ -413,22 +410,22 @@ module.exports = router
 
 修改 **test.js** 修改后如下:
 
-```
+```js
 // api/test.js
-const Router = require('koa-router')
-const { HttpException } = require('../../core/http-exception')
+const Router = require("koa-router");
+const { HttpException } = require("../../core/http-exception");
 
 const router = new Router({
-  prefix: '/test'
-})
+  prefix: "/test"
+});
 
-router.get('/', async ctx => {
+router.get("/", async ctx => {
   // throw new Error('抛出异常')
-  throw new HttpException()
-  ctx.body = '测试'
-})
+  throw new HttpException();
+  ctx.body = "测试";
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 刷新 http://localhost:3000/test 如图:
@@ -445,28 +442,27 @@ module.exports = router
 
 打开**config**文件下的 config.js 新增 mysql 配置代码如下：
 
-```
+```js
 // config.js
 module.exports = {
   // prod
-  environment: 'dev',
+  environment: "dev",
   database: {
-    dbName: 'remind',
-    host: 'localhost',
+    dbName: "remind",
+    host: "localhost",
     port: 3306,
-    user: 'root',
-    password: '123456'
+    user: "root",
+    password: "123456"
   }
-}
-
+};
 ```
 
 我们通过**sequelize.js**去操作数据库,在**core**目录下新增文件**db.js**:
 
-```
+```js
 // db.js
-const { Sequelize, Model } = require('sequelize')
-const { unset, clone, isArray } = require('loadsh')
+const { Sequelize, Model } = require("sequelize");
+const { unset, clone, isArray } = require("loadsh");
 
 const {
   dbName,
@@ -474,146 +470,140 @@ const {
   port,
   user,
   password
-} = require('../config/config').database
+} = require("../config/config").database;
 const sequelize = new Sequelize(dbName, user, password, {
-  dialect: 'mysql', // 连接数据库
+  dialect: "mysql", // 连接数据库
   host,
   port,
-  timezone: '+08:00',
+  timezone: "+08:00",
   define: {
     logging: true,
     timestamps: true, // 时间字段
     paranoid: true, // 删除字段
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    deletedAt: 'deleted_at',
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: "deleted_at",
     underscored: true, // 驼峰转化下划线
     freezeTableName: true
   }
-})
+});
 
 sequelize.sync({
   force: false
-})
+});
 
 Model.prototype.toJSON = function() {
-  let data = clone(this.dataValues)
-  unset(data, 'updated_at')
-  unset(data, 'deleted_at')
+  let data = clone(this.dataValues);
+  unset(data, "updated_at");
+  unset(data, "deleted_at");
 
   if (isArray(this.exclude)) {
     this.exclude.forEach(value => {
-      unset(data, value)
-    })
+      unset(data, value);
+    });
   }
 
-  return data
-}
+  return data;
+};
 
 module.exports = {
   sequelize
-}
-
+};
 ```
 
 在**api**目录下新建**user.js**删除之前用于测试的 test.js,新增代码:
 
-```
+```js
 // user.js
-const Router = require('koa-router')
+const Router = require("koa-router");
 
 const router = new Router({
-  prefix: '/user'
-})
-router.post('/register', async ctx => {
-
-})
-module.exports = router
+  prefix: "/user"
+});
+router.post("/register", async ctx => {});
+module.exports = router;
 ```
 
 > 接着我们给用户注册写 **校验器**，校验器也是通过中间件的方式去实现的。如果发生异常会直接被我们的全局异常所捕获到
 
 打来 core 目录的**http-exception.js**新增**ParameterException**异常修改如下:
 
-```
+```js
 // http-exception.js
 class HttpException extends Error {
-  constructor(msg = '服务器异常', code = 400, errorCode = 10001) {
-    super()
-    this.msg = msg
-    this.code = code
-    this.errorCode = errorCode
+  constructor(msg = "服务器异常", code = 400, errorCode = 10001) {
+    super();
+    this.msg = msg;
+    this.code = code;
+    this.errorCode = errorCode;
   }
 }
 
 class ParameterException extends HttpException {
-  constructor(msg = '参数错误', errorCode) {
-    super()
-    this.msg = msg
-    this.errorCode = errorCode || 10001
+  constructor(msg = "参数错误", errorCode) {
+    super();
+    this.msg = msg;
+    this.errorCode = errorCode || 10001;
   }
 }
 
 module.exports = {
   HttpException,
   ParameterException
-}
-
+};
 ```
 
 接下来在**app**目录下新建文件夹**validators**存放我们的校验器。在 validators 下新建**validator.js** 写入:
 
-```
+```js
 // validator.js
 
-const validator = require('validator')
-const { ParameterException } = require('../../core/http-exception')
+const validator = require("validator");
+const { ParameterException } = require("../../core/http-exception");
 
 const RegisterValidator = async function(ctx, next) {
-  const { email, password1, password2 } = ctx.request.body
-  let v = validator.isLength(email, { min: 6, max: 64 })
+  const { email, password1, password2 } = ctx.request.body;
+  let v = validator.isLength(email, { min: 6, max: 64 });
   if (!v) {
-    throw new ParameterException('email长度必须在6~64个字符')
+    throw new ParameterException("email长度必须在6~64个字符");
   }
-  v = validator.isEmail(email)
+  v = validator.isEmail(email);
   if (!v) {
-    throw new ParameterException('email格式错误')
+    throw new ParameterException("email格式错误");
   }
-  v = validator.isLength(password1, { min: 6, max: 32 })
+  v = validator.isLength(password1, { min: 6, max: 32 });
   if (!v) {
-    throw new ParameterException('密码至少6个字符，最多32个字符')
+    throw new ParameterException("密码至少6个字符，最多32个字符");
   }
-  v = validator.isLength(password2, { min: 6, max: 32 })
+  v = validator.isLength(password2, { min: 6, max: 32 });
   if (!v) {
-    throw new ParameterException('密码至少6个字符，最多32个字符')
+    throw new ParameterException("密码至少6个字符，最多32个字符");
   }
   if (password1 !== password2) {
-    throw new ParameterException('两个密码必须相同')
+    throw new ParameterException("两个密码必须相同");
   }
-  await next()
-}
+  await next();
+};
 
 module.exports = {
   RegisterValidator
-}
-
+};
 ```
 
 最后我们修改下 api 目录下的**user.js**,把我们刚刚编写的校验器用上。修改后的 user.js:
 
-```
+```js
 // user.js
-const Router = require('koa-router')
-const { RegisterValidator } = require('../validators/validator')
+const Router = require("koa-router");
+const { RegisterValidator } = require("../validators/validator");
 
 const router = new Router({
-  prefix: '/user'
-})
+  prefix: "/user"
+});
 
-router.post('/register', RegisterValidator, async ctx => {})
+router.post("/register", RegisterValidator, async ctx => {});
 
-module.exports = router
-
+module.exports = router;
 ```
 
 运行 nodemon 在 postman 测试一下先输入一些错误的参数:
@@ -624,10 +614,10 @@ module.exports = router
 
 我们通过模型的方式去操作数据库，在**api**目录下新建**models**文件夹，接着在 models 下新建**user.js**写入代码:
 
-```
+```js
 // user.js
-const { Model, DataTypes } = require('sequelize')
-const { sequelize } = require('../../core/db')
+const { Model, DataTypes } = require("sequelize");
+const { sequelize } = require("../../core/db");
 
 class User extends Model {}
 
@@ -647,70 +637,69 @@ User.init(
   },
   {
     sequelize,
-    tableName: 'user'
+    tableName: "user"
   }
-)
+);
 
 module.exports = {
   User
-}
-
+};
 ```
 
 先把异常类补充完整 **http-exception.js** 完整代码如下:
 
-```
+```js
 // http-exception.js
 class HttpException extends Error {
-  constructor(msg = '服务器异常', code = 400, errorCode = 10001) {
-    super()
-    this.msg = msg
-    this.code = code
-    this.errorCode = errorCode
+  constructor(msg = "服务器异常", code = 400, errorCode = 10001) {
+    super();
+    this.msg = msg;
+    this.code = code;
+    this.errorCode = errorCode;
   }
 }
 
 class ParameterException extends HttpException {
-  constructor(msg = '参数错误', errorCode) {
-    super()
-    this.msg = msg
-    this.errorCode = errorCode || 10001
+  constructor(msg = "参数错误", errorCode) {
+    super();
+    this.msg = msg;
+    this.errorCode = errorCode || 10001;
   }
 }
 
 class Success extends HttpException {
-  constructor(msg = 'ok') {
-    super()
-    this.msg = msg
-    this.code = 201
-    this.errorCode = 0
+  constructor(msg = "ok") {
+    super();
+    this.msg = msg;
+    this.code = 201;
+    this.errorCode = 0;
   }
 }
 
 class NotFound extends HttpException {
-  constructor(msg = '资源未找到', errorCode) {
-    super()
-    this.msg = msg
-    this.code = 401
-    this.errorCode = errorCode || 10002
+  constructor(msg = "资源未找到", errorCode) {
+    super();
+    this.msg = msg;
+    this.code = 401;
+    this.errorCode = errorCode || 10002;
   }
 }
 
 class EmailRepetition extends HttpException {
-  constructor(msg = '用户已存在') {
-    super()
-    this.msg = msg
-    this.code = 402
-    this.errorCode = 10003
+  constructor(msg = "用户已存在") {
+    super();
+    this.msg = msg;
+    this.code = 402;
+    this.errorCode = 10003;
   }
 }
 
 class LikeError extends HttpException {
-  constructor(msg = '你已经点过赞了', errorCode) {
-    super()
-    this.msg = msg
-    this.code = 402
-    this.errorCode = errorCode || 10004
+  constructor(msg = "你已经点过赞了", errorCode) {
+    super();
+    this.msg = msg;
+    this.code = 402;
+    this.errorCode = errorCode || 10004;
   }
 }
 
@@ -721,37 +710,36 @@ module.exports = {
   NotFound,
   EmailRepetition,
   LikeError
-}
+};
 ```
 
 模型创建好之后打开**api 目录下的 user.js** 修改后代码如下:
 
-```
+```js
 // user.js
-const Router = require('koa-router')
-const { RegisterValidator } = require('../validators/validator')
-const { EmailRepetition } = require('../../core/http-exception')
-const { User } = require('../models/user')
+const Router = require("koa-router");
+const { RegisterValidator } = require("../validators/validator");
+const { EmailRepetition } = require("../../core/http-exception");
+const { User } = require("../models/user");
 
 const router = new Router({
-  prefix: '/user'
-})
+  prefix: "/user"
+});
 
-router.post('/register', RegisterValidator, async ctx => {
-  const { email, nickname, password1 } = ctx.request.body
+router.post("/register", RegisterValidator, async ctx => {
+  const { email, nickname, password1 } = ctx.request.body;
   const user = await User.findOne({
     where: {
       email
     }
-  })
+  });
   if (user) {
-    throw new EmailRepetition()
+    throw new EmailRepetition();
   }
-  await User.create({ email, nickname, password: password1 })
-})
+  await User.create({ email, nickname, password: password1 });
+});
 
-module.exports = router
-
+module.exports = router;
 ```
 
 用 postman 调用一下:
@@ -766,73 +754,72 @@ module.exports = router
 
 在**app**目录下新建**lib**文件夹新建帮助函数:
 
-```
+```js
 // lib/helper.js
-const { Success } = require('../../core/http-exception')
+const { Success } = require("../../core/http-exception");
 function success(msg) {
-  throw new Success(msg)
+  throw new Success(msg);
 }
 
 function formatDate(timeObj) {
-  const date = new Date(timeObj)
-  const y = date.getFullYear()
+  const date = new Date(timeObj);
+  const y = date.getFullYear();
   const m =
     (date.getMonth() + 1).toString().length === 1
-      ? '0' + (date.getMonth() + 1)
-      : date.getMonth() + 1
+      ? "0" + (date.getMonth() + 1)
+      : date.getMonth() + 1;
   const d =
     date.getDate().toString().length === 1
-      ? '0' + date.getDate()
-      : date.getDate()
-  return y + '年' + m + '月' + d + '日'
+      ? "0" + date.getDate()
+      : date.getDate();
+  return y + "年" + m + "月" + d + "日";
 }
 
 module.exports = {
   success,
   formatDate
-}
-
+};
 ```
 
 返回两个函数**success**是这次我们需要的，formatDate 我们后面做日期格式化的时候会用到
 
 改写**api 文件夹下的 user.js**在操作成功后返回**success**函数:
 
-```
+```js
 // api/user.js
-const Router = require('koa-router')
-const { RegisterValidator } = require('../validators/validator')
-const { EmailRepetition } = require('../../core/http-exception')
-const { success } = require('../lib/helper')
-const { User } = require('../models/user')
+const Router = require("koa-router");
+const { RegisterValidator } = require("../validators/validator");
+const { EmailRepetition } = require("../../core/http-exception");
+const { success } = require("../lib/helper");
+const { User } = require("../models/user");
 
 const router = new Router({
-  prefix: '/user'
-})
+  prefix: "/user"
+});
 
-router.post('/register', RegisterValidator, async ctx => {
-  const { email, nickname, password1 } = ctx.request.body
+router.post("/register", RegisterValidator, async ctx => {
+  const { email, nickname, password1 } = ctx.request.body;
   const user = await User.findOne({
     where: {
       email
     }
-  })
+  });
   if (user) {
-    throw new EmailRepetition()
+    throw new EmailRepetition();
   }
-  await User.create({ email, nickname, password: password1 })
-  success()
-})
+  await User.create({ email, nickname, password: password1 });
+  success();
+});
 
-router.post('/login', async ctx => {
-  const { email, password } = ctx.request.body
-  const user = await User.validatorEmail(email, password)
+router.post("/login", async ctx => {
+  const { email, password } = ctx.request.body;
+  const user = await User.validatorEmail(email, password);
   ctx.body = {
     user
-  }
-})
+  };
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 接着我们改变点参数通过**postman**调用一下结果应该能正确返回:
@@ -851,11 +838,11 @@ ok 成功地返回出了 **message errorCode 和 requestUrl**
 
 新增了两个静态方法，*validatorUser*验证用户 id 是否存在 _validatorEmail_ 验证用户邮箱是否存在
 
-```
+```js
 // models/user.js
-const { Model, DataTypes, Sequelize } = require('sequelize')
-const { sequelize } = require('../../core/db')
-const { NotFound } = require('../../core/http-exception')
+const { Model, DataTypes, Sequelize } = require("sequelize");
+const { sequelize } = require("../../core/db");
+const { NotFound } = require("../../core/http-exception");
 
 class User extends Model {
   static async validatorUser(id) {
@@ -863,11 +850,11 @@ class User extends Model {
       where: {
         id
       }
-    })
+    });
     if (!user) {
-      throw new NotFound('账号不存在')
+      throw new NotFound("账号不存在");
     }
-    return user
+    return user;
   }
 
   static async validatorEmail(email, password) {
@@ -875,14 +862,14 @@ class User extends Model {
       where: {
         email
       }
-    })
+    });
     if (!user) {
-      throw new NotFound('账号不存在')
+      throw new NotFound("账号不存在");
     }
     if (user.password !== password) {
-      throw new NotFound('密码错误')
+      throw new NotFound("密码错误");
     }
-    return user
+    return user;
   }
 }
 
@@ -902,54 +889,54 @@ User.init(
   },
   {
     sequelize,
-    tableName: 'user'
+    tableName: "user"
   }
-)
+);
 
 module.exports = {
   User
-}
+};
 ```
 
 接着打开**api**目录下的 user.js 新增**路由 login**:
 
 这个路由就是调用了**User**模型上的*validatorEmail*方法把查询到的 User 返回给前端。
 
-```
+```js
 // api/user.js
-const Router = require('koa-router')
-const { RegisterValidator } = require('../validators/validator')
-const { EmailRepetition } = require('../../core/http-exception')
-const { success } = require('../lib/helper')
-const { User } = require('../models/user')
+const Router = require("koa-router");
+const { RegisterValidator } = require("../validators/validator");
+const { EmailRepetition } = require("../../core/http-exception");
+const { success } = require("../lib/helper");
+const { User } = require("../models/user");
 
 const router = new Router({
-  prefix: '/user'
-})
+  prefix: "/user"
+});
 
-router.post('/register', RegisterValidator, async ctx => {
-  const { email, nickname, password1 } = ctx.request.body
+router.post("/register", RegisterValidator, async ctx => {
+  const { email, nickname, password1 } = ctx.request.body;
   const user = await User.findOne({
     where: {
       email
     }
-  })
+  });
   if (user) {
-    throw new EmailRepetition()
+    throw new EmailRepetition();
   }
-  await User.create({ email, nickname, password: password1 })
-  success()
-})
+  await User.create({ email, nickname, password: password1 });
+  success();
+});
 
-router.post('/login', async ctx => {
-  const { email, password } = ctx.request.body
-  const user = await User.validatorEmail(email, password)
+router.post("/login", async ctx => {
+  const { email, password } = ctx.request.body;
+  const user = await User.validatorEmail(email, password);
   ctx.body = {
     user
-  }
-})
+  };
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 ## 新增日记
@@ -962,11 +949,11 @@ module.exports = router
 
 定义表名和字段需要注意的是设置**favor_nums**和**look_nums**的默认值为 0，**content**的长度大家可视情况。
 
-```
+```js
 // models/diary.js
 
-const { Model, DataTypes } = require('sequelize')
-const { sequelize } = require('../../core/db')
+const { Model, DataTypes } = require("sequelize");
+const { sequelize } = require("../../core/db");
 
 class Diary extends Model {}
 
@@ -987,13 +974,13 @@ Diary.init(
   },
   {
     sequelize,
-    tableName: 'diary'
+    tableName: "diary"
   }
-)
+);
 
 module.exports = {
   Diary
-}
+};
 ```
 
 ### 2）编写 diary 校验器
@@ -1002,81 +989,81 @@ module.exports = {
 
 打开**validators**目录下的**validator.js** 完整代码如下:
 
-```
+```js
 // validators/validator.js
-const validator = require('validator')
-const { ParameterException } = require('../../core/http-exception')
+const validator = require("validator");
+const { ParameterException } = require("../../core/http-exception");
 
 const RegisterValidator = async function(ctx, next) {
-  const { email, password1, password2 } = ctx.request.body
-  let v = validator.isLength(email, { min: 6, max: 64 })
+  const { email, password1, password2 } = ctx.request.body;
+  let v = validator.isLength(email, { min: 6, max: 64 });
   if (!v) {
-    throw new ParameterException('email长度必须在6~64个字符')
+    throw new ParameterException("email长度必须在6~64个字符");
   }
-  v = validator.isEmail(email)
+  v = validator.isEmail(email);
   if (!v) {
-    throw new ParameterException('email格式错误')
+    throw new ParameterException("email格式错误");
   }
-  v = validator.isLength(password1, { min: 6, max: 32 })
+  v = validator.isLength(password1, { min: 6, max: 32 });
   if (!v) {
-    throw new ParameterException('密码至少6个字符，最多32个字符')
+    throw new ParameterException("密码至少6个字符，最多32个字符");
   }
-  v = validator.isLength(password2, { min: 6, max: 32 })
+  v = validator.isLength(password2, { min: 6, max: 32 });
   if (!v) {
-    throw new ParameterException('密码至少6个字符，最多32个字符')
+    throw new ParameterException("密码至少6个字符，最多32个字符");
   }
   if (password1 !== password2) {
-    throw new ParameterException('两个密码必须相同')
+    throw new ParameterException("两个密码必须相同");
   }
-  await next()
-}
+  await next();
+};
 
 const DiaryValidator = async (ctx, next) => {
-  const { content } = ctx.request.body
+  const { content } = ctx.request.body;
   if (content.length > 1000) {
-    throw new ParameterException('内容超过1000字')
+    throw new ParameterException("内容超过1000字");
   }
-  await next()
-}
+  await next();
+};
 
 const GetDiaryValidator = async (ctx, next) => {
-  const { start, count } = ctx.request.query
+  const { start, count } = ctx.request.query;
   if (!start || !count) {
-    await next()
-    return
+    await next();
+    return;
   }
-  let v = validator.isInt(start)
+  let v = validator.isInt(start);
   if (!v) {
-    throw new ParameterException('start不符合规范')
+    throw new ParameterException("start不符合规范");
   }
-  v = validator.isInt(count)
+  v = validator.isInt(count);
   if (!v) {
-    throw new ParameterException('count不符合规范')
+    throw new ParameterException("count不符合规范");
   }
-  await next()
-}
+  await next();
+};
 
 const PutDiaryValidator = async (ctx, next) => {
-  const { content } = ctx.request.body
-  let v = validator.isEmpty(content)
+  const { content } = ctx.request.body;
+  let v = validator.isEmpty(content);
   if (v) {
-    throw new ParameterException('content不能为空')
+    throw new ParameterException("content不能为空");
   }
-  await next()
-}
+  await next();
+};
 
 const PostFavorValidator = async (ctx, next) => {
-  const { uid, diary_id } = ctx.request.body
-  let v = validator.isInt(uid.toString())
+  const { uid, diary_id } = ctx.request.body;
+  let v = validator.isInt(uid.toString());
   if (!v) {
-    throw new ParameterException('uid 不符合规范')
+    throw new ParameterException("uid 不符合规范");
   }
-  v = validator.isInt(diary_id.toString())
+  v = validator.isInt(diary_id.toString());
   if (!v) {
-    throw new ParameterException('diary_id 不符合规范')
+    throw new ParameterException("diary_id 不符合规范");
   }
-  await next()
-}
+  await next();
+};
 
 module.exports = {
   RegisterValidator,
@@ -1084,42 +1071,41 @@ module.exports = {
   GetDiaryValidator,
   PutDiaryValidator,
   PostFavorValidator
-}
-
+};
 ```
 
 ### 3）编写 diary 接口
 
 接着在**api**目录下新建**diary.js**,新增日记的接口比较简单就是把用户输入的内容插到 diary 表里去。
 
-```
+```js
 // api/diary.js
 
-const Router = require('koa-router')
-const { DiaryValidator } = require('../validators/validator')
-const { success } = require('../lib/helper')
-const { User } = require('../models/user')
-const { Diary } = require('../models/diary')
+const Router = require("koa-router");
+const { DiaryValidator } = require("../validators/validator");
+const { success } = require("../lib/helper");
+const { User } = require("../models/user");
+const { Diary } = require("../models/diary");
 
 const router = new Router({
-  prefix: '/diary'
-})
+  prefix: "/diary"
+});
 
-router.post('/', DiaryValidator, async ctx => {
-  const { id, content } = ctx.request.body
-  const user = await User.validatorUser(id)
-  const date = new Date()
+router.post("/", DiaryValidator, async ctx => {
+  const { id, content } = ctx.request.body;
+  const user = await User.validatorUser(id);
+  const date = new Date();
   await Diary.create({
     uid: id,
     content,
     nickname: user.nickname,
     create_time: date,
     favor_num: 0
-  })
-  success()
-})
+  });
+  success();
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 **postman**调用一下:
@@ -1140,51 +1126,51 @@ module.exports = router
 
 **formatDate**函数对输出的时间戳转化为**xxxx 年 xx 月 xx 日**格式。
 
-```
+```js
 // api/diary.js
-const Router = require('koa-router')
-const { DiaryValidator } = require('../validators/validator')
-const { success } = require('../lib/helper')
-const { User } = require('../models/user')
-const { Diary } = require('../models/diary')
-const { formatDate } = require('../lib/helper')
+const Router = require("koa-router");
+const { DiaryValidator } = require("../validators/validator");
+const { success } = require("../lib/helper");
+const { User } = require("../models/user");
+const { Diary } = require("../models/diary");
+const { formatDate } = require("../lib/helper");
 
 const router = new Router({
-  prefix: '/diary'
-})
+  prefix: "/diary"
+});
 
-router.post('/', DiaryValidator, async ctx => {
-  const { id, content } = ctx.request.body
-  const user = await User.validatorUser(id)
-  const date = new Date()
+router.post("/", DiaryValidator, async ctx => {
+  const { id, content } = ctx.request.body;
+  const user = await User.validatorUser(id);
+  const date = new Date();
   await Diary.create({
     uid: id,
     content,
     nickname: user.nickname,
     create_time: date,
     favor_num: 0
-  })
-  success()
-})
+  });
+  success();
+});
 
-router.get('/:id', async ctx => {
-  const { id } = ctx.params
+router.get("/:id", async ctx => {
+  const { id } = ctx.params;
   const diary = await Diary.findOne({
     where: {
       id: parseInt(id)
     }
-  })
+  });
   if (!diary) {
-    throw new NotFound('文章未找到')
+    throw new NotFound("文章未找到");
   }
-  await diary.increment('look_nums', {
+  await diary.increment("look_nums", {
     by: 1
-  })
-  diary.setDataValue('create_time', formatDate(diary.create_time))
-  ctx.body = diary
-})
+  });
+  diary.setDataValue("create_time", formatDate(diary.create_time));
+  ctx.body = diary;
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 使用**postman**调用一下:
@@ -1202,23 +1188,23 @@ ok 成功查出日记并且**look_nums**也增加了 1。
 打开**models**目录新建**favor.js**，并创建静态方法**increment**。
 首先查询是否这篇日记已经被点赞了，如果是**则抛出异常**。如果没有被点赞则往**favor**表里增加一条记录且为**diary**表里的**favor_nums**字段加 1，为了保持数据库数据一致性用了**数据库事务**的方式。
 
-```
-const { Model, DataTypes } = require('sequelize')
-const { sequelize } = require('../../core/db')
-const { NotFound, LikeError } = require('../../core/http-exception')
-const { User } = require('./user')
+```js
+const { Model, DataTypes } = require("sequelize");
+const { sequelize } = require("../../core/db");
+const { NotFound, LikeError } = require("../../core/http-exception");
+const { User } = require("./user");
 
 class Favor extends Model {
   static async increment(uid, diary_id) {
-    await User.validatorUser(uid)
+    await User.validatorUser(uid);
     const f = await Favor.findOne({
       where: {
         uid,
         diary_id
       }
-    })
+    });
     if (f) {
-      throw new LikeError()
+      throw new LikeError();
     }
     return sequelize.transaction(async t => {
       await Favor.create(
@@ -1227,18 +1213,18 @@ class Favor extends Model {
           diary_id
         },
         { transaction: t }
-      )
-      const { Diary } = require('./diary')
+      );
+      const { Diary } = require("./diary");
       const diary = await Diary.findOne({
         where: {
           id: diary_id
         }
-      })
+      });
       if (!diary) {
-        throw new NotFound('日记不存在')
+        throw new NotFound("日记不存在");
       }
-      await diary.increment('favor_nums', { by: 1, transaction: t })
-    })
+      await diary.increment("favor_nums", { by: 1, transaction: t });
+    });
   }
 }
 
@@ -1249,37 +1235,37 @@ Favor.init(
   },
   {
     sequelize,
-    tableName: 'favor'
+    tableName: "favor"
   }
-)
+);
 
 module.exports = {
   Favor
-}
+};
 ```
 
 ### 2) 编写点赞接口
 
 老样子在**api**目录下新建**favor.js**:
 
-```
+```js
 // api/favor.js
-const Router = require('koa-router')
-const { PostFavorValidator } = require('../validators/validator')
-const { success } = require('../lib/helper')
-const { Favor } = require('../models/favor')
+const Router = require("koa-router");
+const { PostFavorValidator } = require("../validators/validator");
+const { success } = require("../lib/helper");
+const { Favor } = require("../models/favor");
 
 const router = new Router({
-  prefix: '/favor'
-})
+  prefix: "/favor"
+});
 
-router.post('/', PostFavorValidator, async ctx => {
-  const { uid, diary_id } = ctx.request.body
-  await Favor.increment(uid, diary_id)
-  success()
-})
+router.post("/", PostFavorValidator, async ctx => {
+  const { uid, diary_id } = ctx.request.body;
+  await Favor.increment(uid, diary_id);
+  success();
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 用**postman**调试一下:
@@ -1300,42 +1286,42 @@ module.exports = router
 
 打开**models**目录下的**diary.js**新增静态方法**getDiary** 改变后的代码如下:
 
-```
-const { Model, DataTypes, Op } = require('sequelize')
-const { sequelize } = require('../../core/db')
-const { NotFound } = require('../../core/http-exception')
-const { formatDate } = require('../lib/helper')
-const { User } = require('./user')
-const { Favor } = require('./favor')
+```js
+const { Model, DataTypes, Op } = require("sequelize");
+const { sequelize } = require("../../core/db");
+const { NotFound } = require("../../core/http-exception");
+const { formatDate } = require("../lib/helper");
+const { User } = require("./user");
+const { Favor } = require("./favor");
 
 class Diary extends Model {
   static async getDiary(id, start = 0, count = 10) {
-    await User.validatorUser(id)
+    await User.validatorUser(id);
     const favors = await Favor.findAll({
       where: {
         uid: id
       }
-    })
+    });
     const diaryIds = favors.map(f => {
-      return f.diary_id
-    })
+      return f.diary_id;
+    });
     const diary = await Diary.findAll({
-      order: [['id', 'DESC']],
+      order: [["id", "DESC"]],
       where: {
         uid: id
       },
       offset: parseInt(start),
       limit: parseInt(count)
-    })
+    });
     diary.forEach(item => {
-      item.dataValues.create_time = formatDate(item.dataValues.create_time)
+      item.dataValues.create_time = formatDate(item.dataValues.create_time);
       if (diaryIds.includes(item.id)) {
-        item.dataValues.isFavor = 1
+        item.dataValues.isFavor = 1;
       } else {
-        item.dataValues.isFavor = 0
+        item.dataValues.isFavor = 0;
       }
-    })
-    return diary
+    });
+    return diary;
   }
 }
 
@@ -1356,73 +1342,73 @@ Diary.init(
   },
   {
     sequelize,
-    tableName: 'diary'
+    tableName: "diary"
   }
-)
+);
 
 module.exports = {
   Diary
-}
+};
 ```
 
 打开**api**目录下的**diary.js** 修改如下:
 
-```
+```js
 // api/diary.js
-const Router = require('koa-router')
+const Router = require("koa-router");
 const {
   DiaryValidator,
   GetDiaryValidator
-} = require('../validators/validator')
-const { NotFound } = require('../../core/http-exception')
-const { success } = require('../lib/helper')
-const { User } = require('../models/user')
-const { Diary } = require('../models/diary')
-const { formatDate } = require('../lib/helper')
+} = require("../validators/validator");
+const { NotFound } = require("../../core/http-exception");
+const { success } = require("../lib/helper");
+const { User } = require("../models/user");
+const { Diary } = require("../models/diary");
+const { formatDate } = require("../lib/helper");
 
 const router = new Router({
-  prefix: '/diary'
-})
+  prefix: "/diary"
+});
 
-router.post('/', DiaryValidator, async ctx => {
-  const { id, content } = ctx.request.body
-  const user = await User.validatorUser(id)
-  const date = new Date()
+router.post("/", DiaryValidator, async ctx => {
+  const { id, content } = ctx.request.body;
+  const user = await User.validatorUser(id);
+  const date = new Date();
   await Diary.create({
     uid: id,
     content,
     nickname: user.nickname,
     create_time: date,
     favor_num: 0
-  })
-  success()
-})
+  });
+  success();
+});
 
-router.get('/myDiary', GetDiaryValidator, async ctx => {
-  const { id, start, count } = ctx.request.query
-  const diarys = await Diary.getDiary(id, start, count)
-  ctx.body = diarys
-})
+router.get("/myDiary", GetDiaryValidator, async ctx => {
+  const { id, start, count } = ctx.request.query;
+  const diarys = await Diary.getDiary(id, start, count);
+  ctx.body = diarys;
+});
 
-router.get('/:id', async ctx => {
-  xq
-  const { id } = ctx.params
+router.get("/:id", async ctx => {
+  xq;
+  const { id } = ctx.params;
   const diary = await Diary.findOne({
     where: {
       id: parseInt(id)
     }
-  })
+  });
   if (!diary) {
-    throw new NotFound('文章未找到')
+    throw new NotFound("文章未找到");
   }
-  await diary.increment('look_nums', {
+  await diary.increment("look_nums", {
     by: 1
-  })
-  diary.setDataValue('create_time', formatDate(diary.create_time))
-  ctx.body = diary
-})
+  });
+  diary.setDataValue("create_time", formatDate(diary.create_time));
+  ctx.body = diary;
+});
 
-module.exports = router
+module.exports = router;
 ```
 
 用**postman**测试一下:
@@ -1437,73 +1423,72 @@ module.exports = router
 
 打开**models**目录下**diary.js**,新增**getAllDiary**静态方法 更改后如下:
 
-```
+```js
 // models/diary.js
 
-const { Model, DataTypes, Op } = require('sequelize')
-const { sequelize } = require('../../core/db')
-const { NotFound } = require('../../core/http-exception')
-const { formatDate } = require('../lib/helper')
-const { User } = require('./user')
-const { Favor } = require('./favor')
+const { Model, DataTypes, Op } = require("sequelize");
+const { sequelize } = require("../../core/db");
+const { NotFound } = require("../../core/http-exception");
+const { formatDate } = require("../lib/helper");
+const { User } = require("./user");
+const { Favor } = require("./favor");
 
 class Diary extends Model {
   static async getDiary(id, start = 0, count = 10) {
-    await User.validatorUser(id)
+    await User.validatorUser(id);
     const favors = await Favor.findAll({
       where: {
         uid: id
       }
-    })
+    });
     const diaryIds = favors.map(f => {
-      return f.diary_id
-    })
+      return f.diary_id;
+    });
     const diary = await Diary.findAll({
-      order: [['id', 'DESC']],
+      order: [["id", "DESC"]],
       where: {
         uid: id
       },
       offset: parseInt(start),
       limit: parseInt(count)
-    })
+    });
     diary.forEach(item => {
-      item.dataValues.create_time = formatDate(item.dataValues.create_time)
+      item.dataValues.create_time = formatDate(item.dataValues.create_time);
       if (diaryIds.includes(item.id)) {
-        item.dataValues.isFavor = 1
+        item.dataValues.isFavor = 1;
       } else {
-        item.dataValues.isFavor = 0
+        item.dataValues.isFavor = 0;
       }
-    })
-    return diary
+    });
+    return diary;
   }
-
 
   static async getAllDiary(start, count, uid) {
     const diary = await Diary.findAll({
-      order: [['id', 'DESC']],
+      order: [["id", "DESC"]],
       offset: parseInt(start),
       limit: parseInt(count)
-    })
+    });
 
     const favors = await Favor.findAll({
       where: {
         uid
       }
-    })
+    });
 
     const diaryIds = favors.map(f => {
-      return f.diary_id
-    })
+      return f.diary_id;
+    });
 
     diary.forEach(item => {
-      item.dataValues.create_time = formatDate(item.dataValues.create_time)
+      item.dataValues.create_time = formatDate(item.dataValues.create_time);
       if (diaryIds.includes(item.id)) {
-        item.dataValues.isFavor = 1
+        item.dataValues.isFavor = 1;
       } else {
-        item.dataValues.isFavor = 0
+        item.dataValues.isFavor = 0;
       }
-    })
-    return diary
+    });
+    return diary;
   }
 }
 
@@ -1524,23 +1509,23 @@ Diary.init(
   },
   {
     sequelize,
-    tableName: 'diary'
+    tableName: "diary"
   }
-)
+);
 
 module.exports = {
   Diary
-}
+};
 ```
 
 打开**api**目录下**diary.js**新增查询广场日记的路由:
 
-```
-router.get('/', GetDiaryValidator, async ctx => {
-  const { start = 0, count = 10, uid } = ctx.request.query
-  const diarys = await Diary.getAllDiary(start, count, uid)
-  ctx.body = diarys
-})
+```js
+router.get("/", GetDiaryValidator, async ctx => {
+  const { start = 0, count = 10, uid } = ctx.request.query;
+  const diarys = await Diary.getAllDiary(start, count, uid);
+  ctx.body = diarys;
+});
 ```
 
 **postman**跑一下:
@@ -1555,7 +1540,7 @@ router.get('/', GetDiaryValidator, async ctx => {
 
 打开**models**目录下**diary.js**新增 updateDiary 方法:
 
-```
+```js
 static async updateDiary(uid, id, content) {
 await User.validatorUser(uid)
 const diary = await Diary.update(
@@ -1574,13 +1559,13 @@ return diary
 
 接着新增接口在**api**目录下的**diary.js**新增:
 
-```
+```js
 // api/diary.js
-router.put('/', PutDiaryValidator, async ctx => {
-  const { uid, id, content } = ctx.request.body
-  await Diary.updateDiary(uid, id, content)
-  success()
-})
+router.put("/", PutDiaryValidator, async ctx => {
+  const { uid, id, content } = ctx.request.body;
+  await Diary.updateDiary(uid, id, content);
+  success();
+});
 ```
 
 用 postman 运行:
@@ -1595,7 +1580,7 @@ router.put('/', PutDiaryValidator, async ctx => {
 
 创建模型打开**models**目录下的**diary.js**增加删除方法:
 
-```
+```js
 // models/diary.js
 
 static async deleteDiary(uid, id) {
@@ -1612,12 +1597,12 @@ static async deleteDiary(uid, id) {
 
 打开**api**目录下 diary.js 新增:
 
-```
-router.delete('/', async ctx => {
-  const { uid, id } = ctx.request.body
-  await Diary.deleteDiary(uid, id)
-  success()
-})
+```js
+router.delete("/", async ctx => {
+  const { uid, id } = ctx.request.body;
+  await Diary.deleteDiary(uid, id);
+  success();
+});
 ```
 
 运行 postman 调用接口:
