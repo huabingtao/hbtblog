@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         text: "掘金",
-        link: "https://juejin.im/user/592418062f301e006b2db045",
+        link: "https://juejin.im/user/592418062f301e006b2db045/posts",
         target: "_blank"
       },
       {
