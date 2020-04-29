@@ -4,34 +4,36 @@ sidebar: auto
 sidebarDepth: 5
 ---
 
+
 # 联系方式
 
 - 手机：18818231998
 - Email：huabingtao123@gmail.com
 
-# 个人信息
+## 个人信息
 
 - 华炳淘/男/1993
 - 专科/上海农林职业技术学院
 - 工作年限：4 年
-- 掘金：https://juejin.im/user/592418062f301e006b2db045
+- 个人博客：http://blog.huabingtao.com
+- 掘金：https://juejin.im/user/592418062f301e006b2db045/posts
 - Github：https://github.com/huabingtao
-- 期望职位：web 前端工程师(vue+react 方向)
+- 期望职位：web 前端工程师(Vue+React+Node 方向)
 - 期望城市：上海
 
-# 技能清单
+## 技能清单
 
 以下均为我熟练使用的技能
 
 - 前端框架：Vue/React
 - 前端 ui 框架: Element-ui/Ant-design/iview/Ant-mobile/Taro-ui/Bootstrap
-- 前端工具：Webpack/Sass/Less/Styles
+- 前端工具：Typescript/Webpack/Sass/Less/Styles
 - 后端开发：Node/Koa2/Express/Nginx
 - 数据库相关：MySQL
 - 版本管理：Git/Svn
 - 单元测试：Jest
 
-# 工作经历
+## 工作经历
 
 ### 上海慧住信息科技有限公司 （ 2018 年 8 月 ~ 2020 年 2 月 ）
 
@@ -56,12 +58,12 @@ sidebarDepth: 5
 - 负责静态网页开发及 Js 交互。
 - 同期工作之余提升自己原生 JS 编码能力。
 
-# 项目经历
+## 项目经历
 
 #### H 连锁飞燕小程序(上海慧住)2019.08-2019.12
 
 项目描述：
-飞燕店长小程序是一款为酒店店长量身定做的一款轻量级软件为店长赋能使能更好的管理酒店，主要功能有查看酒店经营数据、查看当前酒店在全国排行、店长日常任务拍照上传等功能。
+飞燕店长小程序是一款为酒店店长量身定做的一款轻量级软件为店长赋能使能更好的管理酒店，主要功能有定位打卡、日志系统、酒店经营数据、酒店在全国排行、店长日常任务拍照上传等功能。
 
 技术栈：
 **Taro-cli2.0 Axios Taro-ui React-redux**
@@ -69,8 +71,8 @@ sidebarDepth: 5
 主要内容：
 
 - 我选用用 Taro-cli2.0 版本构建配套使用 Taro-ui 作为 ui 框架。
-- 由我封装统一 Api 由于后端环境域名很多所以我选择对 Taro 原有的 Taro.request()进行封装，在跟目录建立配置文件通过 node 提供的 process.env.NODE_ENV 全局环境变量去对环境进行区分，添加 Taro 拦截器统一处理用户权限。
-- 多个页面之间状态管理往往很棘手因此我使用 react-redux 处理，首先讲需要用到的表单数据存储在 store 中然后再通过 action 操作数据，组件中通过 redux 提供的 connect 方法将 store 中的数据作为 props 绑定到组件上。
+- 统一封装 Api 由于后端环境域名很多所以我选择对 Taro 原有的 Taro.request()进行封装，在跟目录建立配置文件通过 node 提供的 process.env.NODE_ENV 全局环境变量去对环境进行区分，添加 Taro 拦截器统一处理用户权限。
+- 多个页面之间数据状态管理往往很棘手因此我使用 react-redux 处理，首先讲需要用到的表单数据存储在 store 中然后再通过 action 操作数据，组件中通过 redux 提供的 connect 方法将 store 中的数据作为 props 绑定到组件上。
 
 #### 八爪鱼后台管理系统    （上海慧住）     2019.01-2020.02                               
 
@@ -83,9 +85,9 @@ sidebarDepth: 5
 主要内容:
 
 - 开发阶段使用 esay-moke 模拟数据增加前后端联调效率。
-- 使用 axios 库进行 http 请求配置 nginx 解决跨域问题，封装 api 全局 filter 公共 vendor 公共 util 函数。
-- 前端路由方面使用 vue-router 开启 history 模式，后端配置 nginx 重定向到 index.html 解决用户刷新报 404 问题。
-- 由我封装全局 store 按模块进行拆分，搭建 nginx 代理加载静态资源。
+- 使用 axios 库进行 http 请求配置 , nginx 代理解决跨域问题，封装 api 全局 filter 公共 vendor 公共 util 函数。
+- 前端路由方面使用 vue-router 开启 history 模式，后端配置 nginx 重定向到 index.html 解决刷新页面报 404 问题。
+- 封装全局 store 按模块进行拆分，使用 nginx 静态资源服务器访问静态资源。
 - 使用路由懒加载提升首页加载速度，使用 webpack dll 配置打包第三方库提高项目开发阶段 webpack-dev-server 打包速度提升开发效率。
 - 由于 icon 使用频繁每次有新增的 icon 都去阿里图标库新增再下载下来显得有些低效，于是我优化了 svg 图标使用，利用 require.context 做文件夹的自动导入，使用 svg-sprite-loader 处理 svg 生成 symbol 图标。任何时候只要我们想用 svg 图标只要引入对应 svg 的文件名就可以了。
 
@@ -116,12 +118,12 @@ sidebarDepth: 5
 - 前后端数据格式严重耦合代码层面上有着大量的约定比如组件类型定义为 type 为 input 就只能是 input
 - 业务逻辑较为复杂需要理解 Vue 组件动态组件、递归组件的原理。
 
-# 开源项目
+## 开源项目
 
 #### 吾记 2019.09-2019.10
 
 项目描述:
-前端用 React 构建，后端 Node + Koa2 使用 Sequelize 操作 mysql 数据库主要功能包括登录、注册、新增日记、修改日记、点赞等
+前端用 React 构建，后端 Node + Koa2 使用 Sequelize 操作 mysql 主要功能包括登录、注册、新增日记、查看日记、修改日记、点赞等
 
 技术栈:
 **React16 React-router Ant-mobile Node.js Koa2 Mysql Nginx**
@@ -143,7 +145,9 @@ sidebarDepth: 5
 
 ## 技术文章
 
-[React + node + koa2 打造日记本应用 进阶大前端](https://juejin.im/post/5e3588cae51d4502671a43b1)
+- [React + node + koa2 打造日记本应用 进阶大前端](https://juejin.im/post/5e3588cae51d4502671a43b1)
+
+- [从零配置 Eslint + Prettier + husky + lint-staged 构建前端代码工作流](https://juejin.im/post/5ea68dbce51d4546df73ad17)
 
 # 致谢
 
