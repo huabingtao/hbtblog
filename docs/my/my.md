@@ -4,7 +4,6 @@ sidebar: auto
 sidebarDepth: 5
 ---
 
-
 # 联系方式
 
 - 手机：18818231998
@@ -14,7 +13,7 @@ sidebarDepth: 5
 
 - 华炳淘/男/1993
 - 专科/上海农林职业技术学院
-- 工作年限：4 年
+- 工作年限：5 年
 - 个人博客：http://blog.huabingtao.com
 - 掘金：https://juejin.im/user/592418062f301e006b2db045/posts
 - Github：https://github.com/huabingtao
@@ -58,12 +57,17 @@ sidebarDepth: 5
 - 负责静态网页开发及 Js 交互。
 - 同期工作之余提升自己原生 JS 编码能力。
 
+### 无锡隽永信息科技有限公司 （ 2015 年 7 月 ~ 2016 年 12 月 ）
+
+- 根据 ui 给出的 psd 完成切图并使用 bootsrtap 前端框架还原成 h5 页面。
+- 使用 wordPress 提供的一些功能 动态化 header footer sidebar 等部分搭建网站。
+
 ## 项目经历
 
 #### H 连锁飞燕小程序(上海慧住)2019.08-2019.12
 
 项目描述：
-飞燕店长小程序是一款为酒店店长量身定做的一款轻量级软件为店长赋能使能更好的管理酒店，主要功能有定位打卡、日志系统、酒店经营数据、酒店在全国排行、店长日常任务拍照上传等功能。
+飞燕店长小程序是一款为酒店店长量身定做的轻量级软件,为店长赋能使能更好的管理酒店，主要功能有定位打卡、日志系统、酒店经营数据、酒店在全国排行、店长日常任务拍照上传等功能。
 
 技术栈：
 **Taro-cli2.0 Axios Taro-ui React-redux**
@@ -84,7 +88,7 @@ sidebarDepth: 5
 
 主要内容:
 
-- 开发阶段使用 esay-moke 模拟数据增加前后端联调效率。
+- 开发阶段使用 easy-moke 模拟数据增加前后端联调效率。
 - 使用 axios 库进行 http 请求配置 , nginx 代理解决跨域问题，封装 api 全局 filter 公共 vendor 公共 util 函数。
 - 前端路由方面使用 vue-router 开启 history 模式，后端配置 nginx 重定向到 index.html 解决刷新页面报 404 问题。
 - 封装全局 store 按模块进行拆分，使用 nginx 静态资源服务器访问静态资源。
