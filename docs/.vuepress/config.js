@@ -3,11 +3,11 @@ module.exports = {
   theme: "@vuepress/theme-blog",
   base: "/",
   description: "blog",
-  head: [["link", { rel: "icon", href: `./favicon.ico` }]],
+  head: [["link", { rel: "shortcut icon", href: `./favicon.ico` }]],
   port: "2020",
   tags: "/tags",
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
   },
   plugins: ["@vuepress/active-header-links", "@vuepress/back-to-top"],
   themeConfig: {
@@ -16,32 +16,32 @@ module.exports = {
     nav: [
       {
         text: "个人简历",
-        link: "/my/my"
+        link: "/my/my",
       },
       {
         text: "掘金",
         link: "https://juejin.im/user/592418062f301e006b2db045/posts",
-        target: "_blank"
+        target: "_blank",
       },
       {
         text: "GitHub",
         link: "https://github.com/huabingtao",
-        target: "_blank"
-      }
+        target: "_blank",
+      },
     ],
     footer: {
       contact: [
         {
           type: "github",
-          link: "https://github.com/huabingtao"
-        }
+          link: "https://github.com/huabingtao",
+        },
       ],
       copyright: [
         {
           text: "MIT Licensed | Copyright © 2020-present HuaBingTao",
-          link: ""
-        }
-      ]
+          link: "",
+        },
+      ],
     },
     comment: {
       // Which service you'd like to use
@@ -52,17 +52,17 @@ module.exports = {
       repo: "Your repo",
       // The clientId & clientSecret introduced in OAuth2 spec.
       clientId: "b0a4f179d5e6a65ce11b",
-      clientSecret: "adf8f30c5f505c36bd52d7748ae349317bb46451"
+      clientSecret: "adf8f30c5f505c36bd52d7748ae349317bb46451",
     },
     sidebarDepth: 6,
     displayAllHeaders: false,
-    smoothScroll: true // 页面滚动
+    smoothScroll: true, // 页面滚动
   },
   configureWebpack: {
     resolve: {
       alias: {
-        "@alias": "path/to/some/dir"
-      }
-    }
-  }
+        "@alias": "path/to/some/dir",
+      },
+    },
+  },
 };
