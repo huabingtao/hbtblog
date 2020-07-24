@@ -4,79 +4,154 @@ sidebar: auto
 sidebarDepth: 5
 ---
 
-<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="font-size: 16px; padding: 0 10px; word-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; line-height: 1.25; color: #2b2b2b; font-family: Optima-Regular, Optima, PingFangTC-Light, PingFangSC-light, PingFangTC-light; letter-spacing: 2px; background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.04) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.04) 3%, rgba(0, 0, 0, 0) 3%); background-size: 20px 20px; background-position: center center;"><h1 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 25px;"><span class="prefix" style="font-weight: bold; color: #40B8FA; display: none;"></span><span class="content" style="display: inline-block; font-weight: bold; color: #40B8FA;">联系方式</span><span class="suffix" style="display: inline-block; font-weight: bold; color: #40B8FA;"></span></h1>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">手机：18818231998</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">Email：huabingtao123@gmail.com</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">个人信息</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">华炳淘/男/1993</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">专科/上海农林职业技术学院</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">工作年限：5 年</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">个人博客：http://blog.huabingtao.com</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">掘金：https://juejin.im/user/592418062f301e006b2db045/posts</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">Github：https://github.com/huabingtao</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">期望职位：web 前端工程师(Vue+React+Node 方向)</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">期望城市：上海</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">自我介绍</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">你好我是一名前端开发，熟练用组件化模块化开发项目及构建优化，擅长制定并规范团队协作模式，前后端技术栈均有尝试。能够独立完成项目从零到部署上线。</p>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">技能清单</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">以下均为我熟练使用的技能</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">前端框架：Vue/React</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">前端 ui 框架: Element-ui/Ant-design/iview/Ant-mobile/Taro-ui/Bootstrap</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">前端工具：Typescript/Webpack/Sass/Less/Styles</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">后端开发：Node/Koa2/Express/Nginx</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">数据库相关：MySQL</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">版本管理：Git/Svn</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">单元测试：Jest</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">工作经历</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>上海慧住信息科技有限公司 （ 2018 年 8 月 ~ 2020 年 2 月 ）</span><span class="suffix" style="display: none;"></span></h3>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">负责前端项目的架构设计,参与项目评审，配合产品经理和设计，参与产品的开发和业务实现并最终完成部署。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">主导和负责公司管理后台以及小程序的日常开发。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">基于公司业务对前端框架工具对比,用适合的框架进行研发。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">定期组织团队分享以及 codeRview。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">工作之余阅读前端团队其他成员的代码,吸取别人的长处,约束团队代码保持一致。</section></li></ul>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>上海寰易信息科技有限公司 （ 2018 年 3 月 ~ 2018 年 7 月 ）</span><span class="suffix" style="display: none;"></span></h3>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">参与项目评审，根据产品需求实现海易通管理后台和小程序的维护以及更新迭代。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用 flex 对 h5 页面布局的重构使用 rem 对手机端页面进行适配。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">负责 h5 活动页/pc/微信页面开发和维护。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用小程序分包加载优化首次加载速度。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">负责小程序账单部分功能的开发和维护。</section></li></ul>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>晶睿文化传媒（上海）有限公司 （ 2016 年 4 月 ~ 2018 年 3 月 ）</span><span class="suffix" style="display: none;"></span></h3>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">根据 ui 给出的 psd 高度还原成 h5 页面。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用 vue.js 做页面动态渲染。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">负责静态网页开发及 Js 交互。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">同期工作之余提升自己原生 JS 编码能力。</section></li></ul>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>无锡隽永信息科技有限公司 （ 2015 年 7 月 ~ 2016 年 12 月 ）</span><span class="suffix" style="display: none;"></span></h3>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">根据 ui 给出的 psd 完成切图并使用 bootsrtap 前端框架还原成 h5 页面。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用 wordPress 提供的一些功能 动态化 header footer sidebar 等部分搭建网站。</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">项目经历</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>H 连锁飞燕小程序(上海慧住)2019.08-2019.12</span><span class="suffix" style="display: none;"></span></h3>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">项目描述：
-飞燕店长小程序是一款为酒店店长量身定做的轻量级软件,为店长赋能使能更好的管理酒店，主要功能有定位打卡、日志系统、酒店经营数据、酒店在全国排行、店长日常任务拍照上传等功能。</p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">技术栈：
-<strong style="color: #3594F7; font-weight: bold;"><span>「</span>Taro-cli2.0 Axios Taro-ui React-redux<span>」</span></strong></p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">主要内容：</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">项目的技术栈方面经过对比了 mpVue、Taro、wepy, 最终选用<strong style="color: #3594F7; font-weight: bold;"><span>「</span>Taro<span>」</span></strong>作为小程序框架，一方面是因为 mpVue 处于美团官方已经不维护的状态，wepy 又是无法兼容别的平台，然而 Taro 社区很活跃迭代更新也很稳定，另一方面 Taro 几乎全面拥抱了 ract 语法，可打包多套代码运行,提供了 h5 平台兼容的方案.</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">由于在<strong style="color: #3594F7; font-weight: bold;"><span>「</span>Taro<span>」</span></strong>中没有暴露出<strong style="color: #3594F7; font-weight: bold;"><span>「</span>webpack<span>」</span></strong>的配置代码，导致每次打包发布都需要手动去修改<strong style="color: #3594F7; font-weight: bold;"><span>「</span>baseUrl<span>」</span></strong>地址显得有点低效，于是通过在打包时设置 node 内置的环境变量<strong style="color: #3594F7; font-weight: bold;"><span>「</span>NODE_ENV<span>」</span></strong>区分不同环境。解决了在打包前手动去修改配置的问题提高了开发效率和容错。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">其中有个需求是当前用户编辑的内容退出后下次进来还可以看到上次编辑的内容，于是我想着可以把未发布的数据保存到<strong style="color: #3594F7; font-weight: bold;"><span>「</span>redux<span>」</span></strong>中进行管理这个问题也顺利得到了解决。</section></li></ul>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>八爪鱼后台管理系统 &nbsp; &nbsp;（上海慧住）&nbsp; &nbsp; &nbsp;2019.01-2020.02</span><span class="suffix" style="display: none;"></span></h3>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">项目描述：
-八爪鱼后台管理系统主要功能包括角色权限、酒店录入、经营数据录入、酒店经营数据图表、全国门店统计图、店长入驻情况统计图等。</p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">技术栈:
-<strong style="color: #3594F7; font-weight: bold;"><span>「</span>Vue2.6 Vue-router Vue-cli3 ElementUi Easy-moke Vuex Axios Echart Nginx<span>」</span></strong></p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">主要内容:</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">开发阶段使用 <strong style="color: #3594F7; font-weight: bold;"><span>「</span>easy-moke<span>」</span></strong> 模拟数据解决了迭代开始就可以使用测试用例不需要等待服务端测试的接口。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">由于用于登录的<strong style="color: #3594F7; font-weight: bold;"><span>「</span>token<span>」</span></strong>令牌只有 2 小时的过期时间(为了安全考虑)，2 小时候用户就要重新登录显得很麻烦。为了让用户得到最好的用户体验我们采用双令牌无感知登录机制,具体做法就是客户端向服务端发起请求的时候带上<strong style="color: #3594F7; font-weight: bold;"><span>「</span>access_token<span>」</span></strong>当 access_token 过期的时候我们再用<strong style="color: #3594F7; font-weight: bold;"><span>「</span>refresh_token<span>」</span></strong>去刷新 access_token 如果这时候 refresh_token 也过期了那么只能让用户去重新输入密码登录了。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用路由懒加载提升首页加载速度，使用 <strong style="color: #3594F7; font-weight: bold;"><span>「</span>webpack dll<span>」</span></strong> 配置打包第三方库提高项目开发阶段 webpack-dev-server 打包速度提升开发效率。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">由于 icon 使用频繁每次有新增的 icon 都去阿里图标库新增再下载下来显得有些低效，于是我优化了 svg 图标使用，利用 require.context 做文件夹的自动导入，使用 svg-sprite-loader 处理 svg 生成 symbol 图标。任何时候只要我们想用 svg 图标只要引入对应 svg 的文件名就可以了。</section></li></ul>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>动态生成任务表单（上海慧住）2019.08-2019.12</span><span class="suffix" style="display: none;"></span></h3>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">项目描述:
-动态生成任务表单是给酒店店长开发的一款任务工具，任务模块通过和后端约定一种 json 数据格式可以动态生成表单，生成可提交的表单例如：输入框、选择日期控件、上传图片、单选、多选等表单。</p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">技术栈:
-<strong style="color: #3594F7; font-weight: bold;"><span>「</span>Vue2.6 Vue-cli3 Axios Vue-router async-components<span>」</span></strong></p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">主要技术:</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">项目中的页面一开始是不确定的所以不能以常规的方式开发。我作为这个项目的负责人，在项目开始阶段通过和服务端开发约定好了数据格式,根据配置文件动态去加载组件的方式成功解决了该问题。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">渲染阶段通过在页面的根目录下创建 formGenerator 组件，根据数组渲染多个 vue 内置的 <strong style="color: #3594F7; font-weight: bold;"><span>「</span>component<span>」</span></strong> 动态组件 component 组件通过 <strong style="color: #3594F7; font-weight: bold;"><span>「</span>:is<span>」</span></strong> 去挂载组件。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">数据处理阶子组件使用 <code style="font-size: 14px; word-wrap: break-word; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #3594F7; background: RGBA(59, 170, 250, .1); display: inline-block; padding: 0 2px; border-radius: 2px; height: 21px; line-height: 22px;">this.$emit('input',value)</code> 往父组件传递内容，父组件再通过@input 的方式去接受值由于父组件接收后通过 <code style="font-size: 14px; word-wrap: break-word; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #3594F7; background: RGBA(59, 170, 250, .1); display: inline-block; padding: 0 2px; border-radius: 2px; height: 21px; line-height: 22px;">this.$set</code> 的方式驱动视图更新。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">由于当前页面所用到的组件是不确定的，如果全部引入必然会降低代码使用的覆盖率，我利用 <strong style="color: #3594F7; font-weight: bold;"><span>「</span>webpack<span>」</span></strong> 的内置方法 require.context 动态引入组件实例，在通过 Objeck.key 遍历对象到 Vue 的 components 中实现组件的自动引入和注册,相当于是做了业务组件的<strong style="color: #3594F7; font-weight: bold;"><span>「</span>按需加载<span>」</span></strong>。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">当表单发生嵌套时会形成嵌套的复杂表单所以我想到了使用 formGroup 成组的组件当渲染到复杂表单的时候递归 formGroup，formGroup 组件再去渲染更小粒度的组件完美的实现了表单的递归嵌套。</section></li></ul>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">总结优点:</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">动态化表单的好处有代码量大大减少了哪怕有十几种不同控件组合而成的表单入口页面只需要一个就可以搞定。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">维护成本降低很多如果有新增加一种类型的任务只要编写对应缺失的组件就可以生成页面。</section></li></ul>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">缺点：</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">前后端数据格式严重耦合代码层面上有着大量的约定如果后端有改动前端这块也得相应着改。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">业务逻辑较为复杂需要理解 Vue 组件动态组件、递归组件的原理。</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">个人项目</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<h3 data-tool="mdnice编辑器" style="padding: 0px; color: black; font-size: 17px; font-weight: bold; text-align: center; position: relative; margin-top: 20px; margin-bottom: 20px;"><span class="prefix" style="display: none;"></span><span class="content" style="border-bottom: 2px solid RGBA(79, 177, 249, .65); color: #2b2b2b; padding-bottom: 2px;"><span style="width: 30px; height: 30px; display: block; background-image: url(https://imgkr.cn-bj.ufileos.com/cdf294d0-6361-4af9-85e2-0913f0eb609b.png); background-position: center; background-size: 30px; margin: auto; opacity: 1; background-repeat: no-repeat; margin-bottom: -8px;"></span>全栈日记应用(吾记) 2019.09-2019.12</span><span class="suffix" style="display: none;"></span></h3>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">项目描述:
-前端用 React 构建，后端 Node + Koa2 使用 Sequelize 操作 mysql 主要功能包括登录、注册、新增日记、查看日记、修改日记、点赞等.</p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">技术栈:
-<strong style="color: #3594F7; font-weight: bold;"><span>「</span>React16 React-router Ant-mobile Node.js Koa2 Mysql Nginx<span>」</span></strong></p>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">主要技术:</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用 validator.js 库编写中间件校验入参，那么在客户端的任何入参错误都被中间件所捕获并以错误的方式传送给客户端，客户端只需要将错误类型判断可以友好的给用户提示，另外在开发阶段也增加了开发效率。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">项目中的点赞功能需要对操作人和日记进行判断，而且首页中需要显示点赞数量和点赞状态。所以这里需要改动两个表里的记录那么由于是异步操作可能引起数据库数据不一致的问题，因此用到了到了数据库的<strong style="color: #3594F7; font-weight: bold;"><span>「</span>事物<span>」</span></strong>使点赞与点赞数保持一致。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">由于服务端 api 接口很多，如果每个都 require 的方式去引入，显得有点笨笨的，所以项目中的 api 使用 requireDirectory 做自动路由加载,节省了时间还规避了一定些由单词拼写错误导致难以排查的 bug。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">部署上由于只有一个域名但是现实情况肯定是想在一台服务器上部署多个项目，这里我想到用二级域名配合<strong style="color: #3594F7; font-weight: bold;"><span>「</span>nginx<span>」</span></strong>转发到对应端口的方式部署了 3 个项目，nginx 也用来搭了一台静态的服务器存放图片等静态资源。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">线上地址:http://diary.huabingtao.com/ account:127@qq.com pwd:111111</section></li></ul>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">总结:</p>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">掌握了 Node 和 Mysql 数据库的使用,提升了编程思维和异步编程的能力。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">深入理解了 Koa2 洋葱模型的理念，做出了全局异常处理中间件。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">使用了 token 代替了传统的 session+cookie 的方式把 token 携带在请求头里这意味着请求是无状态的而且可以避免 CSRF 攻击。</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;">提升了原生 JS 的功底以及熟悉了 ES6、7 语法。</section></li></ul>
-<h2 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 22px; display: block; border-bottom: 4px solid #40B8FA;"><span class="prefix" style="display: flex; width: 20px; height: 20px; background-size: 20px 20px; background-image: url(https://imgkr.cn-bj.ufileos.com/15fdfb3c-b350-4da9-928e-5f8c506ec325.png); margin-bottom: -22px;"></span><span class="content" style="display: flex; color: #40B8FA; font-size: 20px; margin-left: 25px;">技术文章</span><span class="suffix" style="display: flex; box-sizing: border-box; width: 200px; height: 10px; border-top-left-radius: 20px; background: RGBA(64, 184, 250, .5); color: rgb(255, 255, 255); font-size: 16px; letter-spacing: 0.544px; justify-content: flex-end; float: right; margin-top: -10px; box-sizing: border-box !important; overflow-wrap: break-word !important;"></span></h2>
-<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959; list-style-type: circle;">
-<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"><p style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;"><a href="https://juejin.im/post/5e3588cae51d4502671a43b1" style="text-decoration: none; word-wrap: break-word; color: #40B8FA; font-weight: normal; border-bottom: 1px solid #3BAAFA;">React + node + koa2 打造日记本应用 进阶大前端</a></p>
-</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"><p style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;"><a href="https://juejin.im/post/5ea68dbce51d4546df73ad17" style="text-decoration: none; word-wrap: break-word; color: #40B8FA; font-weight: normal; border-bottom: 1px solid #3BAAFA;">从零配置 Eslint + Prettier + husky + lint-staged 构建前端代码工作流</a></p>
-</section></li></ul>
-<h1 data-tool="mdnice编辑器" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; font-size: 25px;"><span class="prefix" style="font-weight: bold; color: #40B8FA; display: none;"></span><span class="content" style="display: inline-block; font-weight: bold; color: #40B8FA;">致谢</span><span class="suffix" style="display: inline-block; font-weight: bold; color: #40B8FA;"></span></h1>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
-<p id="nice-suffix-juejin-container" class="nice-suffix-juejin-container" data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px; margin-top: 20px !important;">本文使用 <a href="https://mdnice.com/?from=juejin" style="text-decoration: none; word-wrap: break-word; color: #40B8FA; font-weight: normal; border-bottom: 1px solid #3BAAFA;">mdnice</a> 排版</p></section>
+# 联系方式
+
+- 手机：18818231998
+- Email：huabingtao123@gmail.com
+
+## 个人信息
+
+- 华炳淘/男/1993
+- 专科/上海农林职业技术学院
+- 工作年限：4 年
+- 个人博客：http://blog.huabingtao.com
+- 掘金：https://juejin.im/user/592418062f301e006b2db045/posts
+- Github：https://github.com/huabingtao
+- 期望职位：web 前端工程师(Vue+React+Node 方向)
+- 期望城市：上海
+
+## 自我介绍
+
+你好我是一名前端开发。熟练使用**Vue**，了解 Vue**组件化**、**响应式**原理。熟悉**React**，了解其一般使用。熟练**组件化模块化**及**构建优化**，擅长制定并规范团队协作模式。**前后端技术栈**均有尝试能够独立完成项目从零到部署上线。另外我觉得程序员是一条很长的路，因此我还坚持写作，和别的开发者分享自己思考的东西，发现不足及时修正。
+
+## 技能清单
+
+以下均为我熟练使用的技能
+
+- 前端框架：Vue/React
+- 前端 ui 框架: Element-ui/Ant-design/iview/Ant-mobile/Taro-ui/Bootstrap
+- 前端工具：Typescript/Webpack/Sass/Less/Styles
+- 后端开发：Node/Koa2/Express/Nginx
+- 数据库相关：MySQL
+- 版本管理：Git/Svn
+- 单元测试：Jest
+
+## 工作经历
+
+### 上海慧住信息科技有限公司 （ 2018 年 8 月 ~ 2020 年 2 月 ）
+
+- 负责前端项目的架构设计,参与项目评审，配合产品经理和设计，参与产品的开发和业务实现并最终完成部署。
+- 主导和负责公司管理后台以及小程序的日常开发。
+- 基于公司业务对前端框架工具对比,用适合的框架进行研发。
+- 定期组织团队分享以及 codeRview。
+- 工作之余阅读前端团队其他成员的代码,吸取别人的长处,约束团队代码保持一致。
+
+### 上海寰易信息科技有限公司 （ 2018 年 3 月 ~ 2018 年 7 月 ）
+
+- 参与项目评审，根据产品需求实现海易通管理后台和小程序的维护以及更新迭代。
+- 使用 flex 对 h5 页面布局的重构使用 rem 对手机端页面进行适配。
+- 负责 h5 活动页/pc/微信页面开发和维护。
+- 使用小程序分包加载优化首次加载速度。
+- 负责小程序账单部分功能的开发和维护。
+
+### 晶睿文化传媒（上海）有限公司 （ 2016 年 4 月 ~ 2018 年 3 月 ）
+
+- 根据 ui 给出的 psd 高度还原成 h5 页面。
+- 使用 vue.js 做页面动态渲染。
+- 负责静态网页开发及 Js 动效交互。
+- 同期工作之余提升自己原生 JS 编码能力。
+
+### 无锡隽永信息科技有限公司 （ 2015 年 7 月 ~ 2016 年 12 月 ）
+
+- 根据 ui 给出的 psd 完成切图并使用 bootsrtap 前端框架还原成 h5 页面。
+- 使用 wordPress 提供的一些功能 动态化 header footer sidebar 等部分搭建网站。
+
+## 项目经历
+
+### 你好酒店预订(上海慧住)2019.08-2020.02
+
+项目描述：
+酒店预订小程序提供酒店搜索，预订，入住成功享受累计积分，提供了多种会员体系享受不同的积分累计制度，新注册的用户享受新人大礼包优惠券等服务。（你好酒店现已和华住旗下怡莱品牌合并）
+
+技术栈：
+**Taro-cli2.0 Axios Taro-ui React-redux**
+
+主要内容：
+
+- 项目的技术栈方面经过对比了 mpVue、Taro、wepy, 最终选用**Taro**作为小程序框架。
+- 通过二次重发机制将每次请求的 Api 都存起来 在获取到 token 失效后 重新获取新令牌，然后 根据存储的已请求 API 状态 将请求失败 API 重新请求一次,实现无感知令牌刷新。
+- 由于在**Taro**中没有暴露出**webpack**的配置方法，导致每次打包发布都需要手动去修改**baseUrl**地址显得有点低效，于是通过在打包时设置 node 内置的环境变量**NODE_ENV**区分不同环境。解决了在打包前手动去修改配置的问题提高了开发效率和容错。
+- 异常监控。页面的任何异常都可能导致支付页面的渲染失败，从而无法正常支付。我们对页面的接口异常、微信 API 异常进行了监控。
+
+### 八爪鱼后台管理系统    （上海慧住）     2019.01-2020.02                               
+
+项目描述：
+八爪鱼后台管理系统主要功能包括**角色权限**、酒店信息录入、经营数据录入、酒店经营数据图表、全国门店统计图、店长入驻情况统计图等。
+
+技术栈:
+**Vue2.6 Vue-router Vue-cli3 ElementUi Easy-moke Vuex Axios Echart Nginx**
+
+主要内容:
+
+- 由于用于登录的**token**令牌只有 2 小时的过期时间(为了安全考虑)，2 小时候用户就要重新登录显得很麻烦。为了让用户得到最好的用户体验我们采用双令牌无感知登录机制,具体做法就是客户端向服务端发起请求的时候带上**access_token**当 access_token 过期的时候我们再用**refresh_token**去刷新 access_token 如果这时候 refresh_token 也过期了那么只能让用户去重新输入密码登录了。
+- 使用路由懒加载提升首页加载速度，使用 **webpack dll** 配置打包第三方库提高项目开发阶段打包速度提升开发效率。
+- 由于 icon 使用频繁每次有新增的 icon 都去阿里图标库新增再下载下来显得有些低效，于是我优化了 svg 图标使用，利用 require.context 做文件夹的自动导入，使用 svg-sprite-loader 处理 svg 生成 symbol 图标。任何时候只要我们想用 svg 图标只要引入对应 svg 的文件名就可以使用。
+- 关于优化:使用 vue 路由懒加载提高首屏加载速度，ElementUi 开启按需加载。使用 CND 的方式引入 Vue、Echart 等，服务端 Ngnix 开启 GZIP。
+
+### 动态配置 h5 表单生成器（上海慧住）2019.08-2019.12
+
+项目描述:
+动态配置 h5 表单生成器。通过后台拖拽控件完成页面的配置，就可以产生一个 h5 表单页面,表单有输入框、选择日期控件、上传图片控件、单选、多选按钮等。
+
+技术栈:
+**Vue2.6 Vue-cli3 Axios Vue-router async-components**
+
+主要技术:
+
+- 项目中的页面一开始是不确定的所以不能以常规的方式开发。我作为这个项目的负责人，在项目开始阶段通过和服务端开发约定好了数据格式,根据配置文件动态去加载组件的方式成功解决了这个问题。
+- 渲染阶段通过在页面的根目录下创建 formGenerator 组件，根据数组渲染多个 vue 内置的 **component** 动态组件 component 组件再通过 **:is** 的方式去挂载组件。
+- 数据处理阶子组件使用 `this.$emit('input',value)` 往父组件传递内容，父组件再通过**@input** 的方式去接受子组件的值由于父组件接收后通过 `this.$set` 的方式驱动视图更新。
+- 由于当前页面所用到的组件是不确定的，全部引入显然是降低页面加载速度的，于是我利用 **webpack** 的内置方法 **require.context **动态引入组件实例，再通过 **Objeck.key** 遍历对象到 Vue 的 **components** 中实现组件的自动引入和注册，相当于是做了业务组件的**按需加载**。
+- 当表单发生嵌套时会形成嵌套的复杂表单使用 **formGroup** 成组的组件当渲染到复杂表单的时候递归 formGroup，formGroup 组件再去渲染更小粒度的组件完美的实现了表单的递归嵌套。
+
+总结优点:
+
+- h5 表单是通过后台拖拽的方式生成的所以不需要一个个把页面切出来，提高了开发效率。
+- 维护成本降低很多如果有新增加一种类型的任务只要编写对应缺失的组件就可以生成页面。
+  总结缺点：
+- 前后端数据格式严重耦合代码层面上有着大量的约定如果后端有改动前端这块也得相应着改。
+- 业务逻辑较为复杂需要理解 Vue 组件动态组件、递归组件的原理。
+
+## 个人项目
+
+### 全栈日记应用(吾记) 2019.09-2019.12
+
+项目描述:
+前端用 React 构建，后端 Node + Koa2 使用 Sequelize 操作 mysql 主要功能包括登录、注册、新增日记、查看日记、修改日记、点赞等.
+
+技术栈:
+**React16 React-router Ant-mobile Node.js Koa2 Mysql Nginx**
+
+主要技术:
+
+- 使用 **validator.js** 库编写中间件校验入参，那么在客户端的任何入参错误都被中间件所捕获并以错误的方式传送给客户端，客户端只需要将错误类型判断可以友好的给用户提示，另外在开发阶段也增加了开发效率。
+- 项目中的点赞功能需要对操作人和日记进行判断，而且首页中需要显示点赞数量和点赞状态。所以这里需要改动两个表里的记录那么由于是异步操作可能引起数据库数据不一致的问题，因此用到了到了**数据库事物**使点赞与点赞数保持一致。
+- 由于服务端 api 接口很多，如果每个都 require 的方式去引入，显得有点笨笨的，于是用 **requireDirectory** 做自动路由加载,节省了时间还规避了一定些由单词拼写错误导致难以排查的 bug。
+- 谈谈部署:由于我只有一个域名但是现实情况肯定是想在一台服务器上部署多个项目，这里我想到用二级域名配合**nginx**转发到对应端口的方式部署了 3 个项目，**nginx** 也用来搭了一台静**态的服务器**存放图片等静态资源。
+- 线上地址:http://diary.huabingtao.com/ account:127@qq.com pwd:111111
+
+总结:
+
+- 掌握了 **Node** 和 **Mysql** 的使用，提升了编程思维和异步编程的能力。
+- 理解了 **Koa2** 洋葱模型的理念，做出了全局异常处理中间件。
+- 提升了原生 JS 的功底以及熟悉了 ES6、7 语法。
+
+## 技术文章
+
+- [朴实无华的 JavaScript 闭包](https://juejin.im/post/5f0eddf5e51d45347246b82c)
+- [React + node + koa2 打造日记本应用 进阶大前端](https://juejin.im/post/5e3588cae51d4502671a43b1)
+- [从零配置 Eslint + Prettier + husky + lint-staged 构建前端代码工作流](https://juejin.im/post/5ea68dbce51d4546df73ad17)
+
+# 致谢
+
+感谢您花时间阅读我的简历，期待能有机会和您共事。
