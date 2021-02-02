@@ -1,4 +1,5 @@
 module.exports = {
+  dest:'public',
   title: "Hbt'blog",
   theme: "@vuepress/theme-blog",
   base: "/hbtblog/",
