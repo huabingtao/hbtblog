@@ -1,7 +1,7 @@
 module.exports = {
   title: "Hbt'blog",
   theme: "@vuepress/theme-blog",
-  base: "/",
+  base: "/hbtblog/",
   description: "blog",
   head: [["link", { rel: "shortcut icon", href: `./favicon.ico` }]],
   port: "2020",
