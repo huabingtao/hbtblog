@@ -2,7 +2,7 @@
 ###
  # @Author: huabingtao
  # @Date: 2021-02-02 22:38:46
- # @LastEditTime: 2021-02-02 22:55:06
+ # @LastEditTime: 2021-02-02 23:11:10
  # @LastEditors: huabingtao
  # @Description: 
  # @FilePath: /vue-press/deploy.sh
@@ -29,7 +29,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:huabingtao/hbtblog.git master:gh-pages
-git push -f https://${access_token}@github.com/huabingtao/hbtblog.git master:gh-pages
+git push origin master:gh-pages
+# git push -f https://${access_token}@github.com/huabingtao/hbtblog.git master:gh-pages
 
 cd -
