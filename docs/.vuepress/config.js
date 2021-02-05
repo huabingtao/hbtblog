@@ -1,11 +1,11 @@
 module.exports = {
-  dest:'public',
+  dest: 'public',
   title: "Hbt'blog",
   theme: "@vuepress/theme-blog",
   base: "/hbtblog/",
   description: "blog",
   head: [["link", { rel: "shortcut icon", href: `./favicon.ico` }]],
-  port: "2020",
+  port: "2021",
   tags: "/tags",
   markdown: {
     lineNumbers: true,
