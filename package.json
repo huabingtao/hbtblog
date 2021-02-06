@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.0",
-    "loadsh": "^0.0.4"
+    "lodash": "^0.0.4"
   }
 }
