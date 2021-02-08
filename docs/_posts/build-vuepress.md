@@ -1,5 +1,5 @@
 ---
-title: vuepress 搭建博客教程 + 部署 GitHub actions
+title: 基于 vuepress 搭建博客教程 + 部署 GitHub actions
 date: 2021-02-07
 tags:
   - vuepress
