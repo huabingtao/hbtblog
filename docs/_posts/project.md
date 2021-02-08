@@ -1,5 +1,5 @@
 ---
-title: 在项目中遇到的问题以及解决方案
+title: 项目中遇到的问题以及解决方案
 date: 2021-02-03
 show: false
 tags:
@@ -8,7 +8,7 @@ author: BingBing
 location: ShangHai
 ---
 
-## 移动端1px border
+## 移动端 1px border
 
 ```
 @border-color-base : #EBEDF0;
@@ -137,6 +137,7 @@ location: ShangHai
 ```
 
 使用：
+
 ```
 .div1{
     .hairline('top',#eeeeee)
@@ -150,6 +151,3 @@ location: ShangHai
 ```
 
 ## Git 常用命令
-
-
-

@@ -8,4 +8,4 @@ author: BingBing
 location: ShangHai
 ---
 
-## 什么是闭包?
+## 什么是 vuepress?
