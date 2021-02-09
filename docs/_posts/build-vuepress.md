@@ -8,4 +8,16 @@ author: BingBing
 location: ShangHai
 ---
 
-## 什么是 vuepress?
+## 前言
+
+## 参考资料
+
+## 部署
+
+### bash 脚本手动部署
+
+### github actions 自动部署
+
+## 其它问题
+
+###
