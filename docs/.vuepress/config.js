@@ -16,10 +16,6 @@ module.exports = {
     logo: "/logo.png",
     nav: [
       {
-        text: "个人简历",
-        link: "/my/my",
-      },
-      {
         text: "掘金",
         link: "https://juejin.im/user/592418062f301e006b2db045/posts",
         target: "_blank",
