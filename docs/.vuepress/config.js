@@ -17,7 +17,7 @@ module.exports = {
     nav: [
       {
         text: "掘金",
-        link: "https://juejin.im/user/592418062f301e006b2db045/posts",
+        link: "https://juejin.cn/user/8451822992855/posts",
         target: "_blank",
       },
       {

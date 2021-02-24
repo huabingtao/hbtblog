@@ -53,14 +53,85 @@ mkdir docs && echo '# Hello VuePress' > docs/README.md
 yarn docs:dev # npm run docs:dev
 ```
 VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热重载的开发服务器。
+![yOLS6P.png](https://s3.ax1x.com/2021/02/24/yOLS6P.png)
+如果出现文章乱码可以参照这篇[文章](https://www.6blog.cn/frontEnd/136)。
 
-现在，你应该已经有了一个简单可用的 VuePress 文档。如果你有兴趣的话可以去VuePress官方网站上深入学习它的配置和用法来丰富你的文档内容。
+现在，你应该已经有了一个简单可用的 **VuePress** 文档。如果你有兴趣的话可以去 VuePress 官方网站上深入学习它的配置和用法来丰富你的文档内容。
 
 
 ## 部署
 
 ### 部署到 GitHub Pages
-接下来的内容假设你已经使用过 **GitHub**,并且对 **GitHub Pages** 有一定的了解。
+接下来的内容假设你已经使用过[GitHub](https://github.com/),并且对[GitHub Pages](https://pages.github.com/)有一定的了解。
+1. 创建一个仓库
+在GitHub上创建一个仓库
+
+![yOwHyT.png](https://s3.ax1x.com/2021/02/24/yOwHyT.png)
+
+2. 在 docs/.vuepress/config.js 中设置正确的 base
+
+在 docs/.vuepress 文件夹下创建 **config.js** 
+``` js
+// config.js
+module.exports = {
+    base: "/vuepress-starter/"
+}
+```
+
+3. 配置.sh脚本
+在你的项目中，创建一个如下的 deploy.sh 文件（请自行判断去掉高亮行的注释）:
+> 注意
+> 需要将 **USERNAME** 和 **REPO** 替换成自己的**GitHub**账号和**仓库名称** 这里我拿自己的GitHub账号为例
+``` sh
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 生成静态文件
+npm run docs:build
+
+# 进入生成的文件夹
+cd docs/.vuepress/dist
+
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
+
+git init
+git add .
+git commit -m 'deploy'
+
+# 如果发布到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
+
+# 如果发布到 https://<USERNAME>.github.io/<REPO>
+git remote add origin git@github.com:huabingtao/vuepress-starter.git
+git branch -M main
+git push -f git@github.com:huabingtao/vuepress-starter.git main:gh-pages
+
+cd -
+```
+
+
+4. 用sh脚本部署
+在package.json下新增一条命令
+``` json
+  "scripts": {
+    ...,
+    "deploy": "bash deploy.sh"
+  }
+```
+
+打开控制台执行
+``` sh
+npm run deploy
+```
+
+
+
+
+## 
+
 
 
 
