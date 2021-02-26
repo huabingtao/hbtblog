@@ -56,7 +56,7 @@ VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热�
 ![yOLS6P.png](https://s3.ax1x.com/2021/02/24/yOLS6P.png)
 如果出现文章乱码可以参照这篇[文章](https://www.6blog.cn/frontEnd/136)去解决。
 
-现在，你应该已经有了一个简单可用的 **VuePress** 文档。如果你有兴趣的话可以去 VuePress 官方网站上深入学习它的配置和用法来丰富你的文档内容。
+现在，你应该已经有了一个简单可用的 **VuePress** 文档。如果你有兴趣的话可以去 VuePress 官方网站上深入学习它的配置和用法来丰富你的网站内容。
 
 
 ## 部署
@@ -65,7 +65,6 @@ VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热�
 接下来的内容假设你已经使用过[GitHub](https://github.com/),并且对[GitHub Pages](https://pages.github.com/)有一定的了解。
 1. 在GitHub上创建一个仓库
   
-
 ![yOwHyT.png](https://s3.ax1x.com/2021/02/24/yOwHyT.png)
 
 2. 在 docs/.vuepress/config.js 中设置正确的 base
@@ -127,12 +126,12 @@ cd -
 ``` sh
 npm run deploy
 ```
-5. 设置仓库GitHub Pages 访问路径
-现在代码已经部署到远程仓库的gh-pages分支下,接下来我们需要设置博客的访问路径，点击右上角的setting按钮进入设置
+5. 设置仓库GitHub Pages访问路径
+现在代码已经部署到远程仓库的gh-pages分支下,接下来我们需要设置博客的访问路径，点击右上角的Settings按钮进入设置
 ![yXqZB8.png](https://s3.ax1x.com/2021/02/24/yXqZB8.png)
-选择目标分支为gh-pages,目录为root
+选择目标分支为gh-pages,根目录为root
 ![yXqUN4.png](https://s3.ax1x.com/2021/02/24/yXqUN4.png)
-稍等几分钟后访问[https://huabingtao.github.io/vuepress-starter/](https://huabingtao.github.io/vuepress-starter/)就能发现我们的博客部署到Github Pages了
+稍等几分钟后访问[https://huabingtao.github.io/vuepress-starter/](https://huabingtao.github.io/vuepress-starter/)此时发现我们的博客部署到Github Pages了
 
 ### github actions 自动部署
 
