@@ -9,7 +9,7 @@ location: ShangHai
 ---
 
 ## 介绍
-用官方的话来说 **VuePress** 是一款以 **Vue** 驱动的静态网站生成器，它的诞生初衷是为了支持 **Vue** 及其子项目的文档需求。下面我会用 **VuePress** 开发一个博客网站并使用[GitHub Actions](https://docs.github.com/en/actions)部署到[GitHub Pages](https://pages.github.com/)
+用官方的话来说 **VuePress** 是一款以 **Vue** 驱动的静态网站生成器,它的诞生初衷是为了支持 **Vue** 及其子项目的文档需求。下面我会用 **VuePress** 搭建一个极简的博客网站并使用[GitHub Actions](https://docs.github.com/en/actions)部署到[GitHub Pages](https://pages.github.com/)。
 
 ## 搭建博客
 
@@ -110,7 +110,7 @@ git push -f git@github.com:huabingtao/vuepress-starter.git main:gh-pages
 
 cd -
 ```
-
+> 以上脚本主要就是干了几件事: 1.生成静态文件 2.切换到生成文件的目录下初始化git写入一条记录 3. 把静态文件推送到远端仓库的gh-pages分支下。
 
 4. 用sh脚本部署
   
@@ -127,19 +127,131 @@ cd -
 npm run deploy
 ```
 5. 设置仓库GitHub Pages访问路径
-现在代码已经部署到远程仓库的gh-pages分支下,接下来我们需要设置博客的访问路径，点击右上角的Settings按钮进入设置
+现在代码已经推送到远程仓库的gh-pages分支下,接下来我们需要设置博客的访问路径，点击右上角的Settings按钮进入设置。
 ![yXqZB8.png](https://s3.ax1x.com/2021/02/24/yXqZB8.png)
 选择目标分支为gh-pages,根目录为root
 ![yXqUN4.png](https://s3.ax1x.com/2021/02/24/yXqUN4.png)
-稍等几分钟后访问[https://huabingtao.github.io/vuepress-starter/](https://huabingtao.github.io/vuepress-starter/)此时发现我们的博客部署到Github Pages了
+稍等几分钟后访问[https://huabingtao.github.io/vuepress-starter/](https://huabingtao.github.io/vuepress-starter/)此时发现我们的博客已经部署到Github Pages了。
+到这里如果你只是希望你的博客可以随时在互联网被访问到，只需要在写完文章之后去执行 `npm run deploy` 这行命令就行了。
 
-### github actions 自动部署
+### 使用 Github Actions 自动部署
+现在我们写一篇文章并且发布到 **GitHub Pags** 需要手动执行sh脚本,使用**GitHub Actions** 可以省略这个步骤，更专注于写作。 
 
-1. 
+GitHub Actions 有一些自己的术语。
+
+1. workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。
+
+2. job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。
+
+3. step（步骤）：每个 job 由多个 step 构成，一步步完成。
+
+4. action （动作）：每个 step 可以依次执行一个或多个命令（action）。
+
+想要了解更多Github Actions知识可以浏览[官方GitHub Actions快速入门](https://docs.github.com/cn/actions/quickstart),或者[阮一峰老师的GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+#### 创建个人访问令牌
+1. 在任何页面的右上角，单击您的个人资料照片，然后单击 Settings（设置）
+   
+  ![6EP7Ke.png](https://s3.ax1x.com/2021/03/03/6EP7Ke.png)
+
+2. 在左侧边栏中，单击 Developer settings。
+   
+  ![6EeoB8.png](https://s3.ax1x.com/2021/03/03/6EeoB8.png)
+
+3. 在左侧边栏中，单击 Personal access tokens（个人访问令牌）
+   
+  ![6EmnHO.png](https://s3.ax1x.com/2021/03/03/6EmnHO.png)
+
+4. 单击 Generate new token（生成新令牌）。
+   
+5. 给令牌一个描述性名称。
+
+令牌名字一定要叫：**ACCESS_TOKEN**
+
+1. 选择要授予此令牌的作用域或权限。 要使用令牌从命令行访问仓库，请选择 repo（仓库）。
+
+![6EmXIe.png](https://s3.ax1x.com/2021/03/03/6EmXIe.png)
+
+7. 单击 Generate token（生成令牌）。
+8. 单击复制将令牌复制到剪贴板。 出于安全原因，离开此页面后，您将无法再次看到令牌。
+
+#### 编写 workflow 文件
+工作流文件使用 YAML 语法，这里不对 YAML 语法做过多介绍想要了解更多信息请参阅[五分钟了解 YAML](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)
+
+创建`.github/workflows/main.yml`文件,内容如下:
+
+``` yml
+name: docs
+
+on:
+  # 每当 push 到 main 分支时触发部署
+  push:
+    branches: [main]
+  # 手动触发部署
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # 选择要使用的 node 版本
+          node-version: "14"
+
+      # 缓存 node_modules
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      # 如果缓存没有命中，安装依赖
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      # 运行构建脚本
+      - name: Build VuePress site
+        run: yarn docs:build
+
+      # 查看 workflow 的文档来获取更多信息
+      # @see https://github.com/crazy-max/ghaction-github-pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # 部署到 gh-pages 分支
+          BRANCH: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          FOLDER: docs/.vuepress/dist
+
+```
+
+以上代码主要配置内容如下:
+1. branches 代表git push 触发flow的分支名称，如果你的分支不是main请修改
+2. run 表示运行命令，若没有修改的话就是 `yarn docs:build`
+3. ACCESS_TOKEN 读取GitHub仓库之前我们设置的 ACCESS_TOKEN
+4. BRANCH 部署到 gh-pages 分支
+5. FOLDER 部署目录,如果没有修改默认配置就是 `docs/.vuepress/dist`
+   
+完成以上配置，下次push代码的时候，就会自动开启构建。
 
 ## 报错以及其它问题
 
 ## 参考资料
 - [vuepress官网](https://vuepress.vuejs.org/zh/ "vuepress官网")
 - [使用 GitHub Actions 自动部署博客](https://vuepress-theme-reco.recoluan.com/views/other/github-actions.html "部署博客")
+- [阮一峰 GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- [MarkDown 基本语法](https://www.jianshu.com/p/191d1e21f7ed)
 ###
