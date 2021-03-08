@@ -11,6 +11,9 @@ location: ShangHai
 ## 介绍
 用官方的话来说 **VuePress** 是一款以 **Vue** 驱动的静态网站生成器,它的诞生初衷是为了支持 **Vue** 及其子项目的文档需求。下面我会用 **VuePress** 搭建一个极简的博客网站并使用[GitHub Actions](https://docs.github.com/en/actions)部署到[GitHub Pages](https://pages.github.com/)。
 
+[示例地址仓库](https://github.com/huabingtao/vuepress-starter)
+[示例博客访问地址](https://huabingtao.github.io/vuepress-starter/)
+
 ## 搭建博客
 
 > 前提条件 
@@ -135,9 +138,9 @@ npm run deploy
 到这里如果你只是希望你的博客可以随时在互联网被访问到，只需要在写完文章之后去执行 `npm run deploy` 这行命令就行了。
 
 ### 使用 Github Actions 自动部署
-现在我们写一篇文章并且发布到 **GitHub Pags** 需要手动执行sh脚本,使用**GitHub Actions** 可以省略这个步骤，更专注于写作。 
+现在我们写一篇文章并且发布到 **GitHub Pags** 需要手动执行sh脚本,使用**GitHub Actions** 可以帮助我们简化流程，让写完一篇文章后只需要将代码上传至github就能帮我们自动构建部署到线上。
 
-GitHub Actions 有一些自己的术语。
+**GitHub Actions** 有一些自己的术语。
 
 1. workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。
 
@@ -239,18 +242,38 @@ jobs:
 ```
 
 以上代码主要配置内容如下:
-1. branches 代表git push 触发flow的分支名称，如果你的分支不是main请修改
-2. run 表示运行命令，若没有修改的话就是 `yarn docs:build`
-3. ACCESS_TOKEN 读取GitHub仓库之前我们设置的 ACCESS_TOKEN
-4. BRANCH 部署到 gh-pages 分支
-5. FOLDER 部署目录,如果没有修改默认配置就是 `docs/.vuepress/dist`
+1. branches 代表git push 触发flow的分支名称，如果你的分支不是main请修改正确。
+2. run 表示运行命令，若没有修改的话就是 `yarn docs:build`。
+3. ACCESS_TOKEN 读取GitHub仓库之前我们设置的 ACCESS_TOKEN，名称一定要与之前设置的相同。
+4. BRANCH 部署到 gh-pages 分支下。
+5. FOLDER 部署目录,如果没有修改默认配置就是 `docs/.vuepress/dist`。
    
 完成以上配置，下次push代码的时候，就会自动开启构建。
 
-## 报错以及其它问题
+尝试push代码，回到GitHub上点击actions,发现项目已经在自动构建了。
+
+![6VME4S.png](https://s3.ax1x.com/2021/03/04/6VME4S.png)
+
+点击进入查看部署情况。
+
+![6VMAN8.png](https://s3.ax1x.com/2021/03/04/6VMAN8.png)
+
+部署成功，如果构建失败GitHub会发送一封邮件到你的邮箱。
+
+
+
+## 搭建过程中遇到的问题
+1. 如果你打算发布到 `https://<USERNAME>.github.io/，` 则不需要配置 `.vuepress/config.js` base 属性,因为 base 默认是 "/"。
+2. 发布到线上后发现css样式丢失，经查看发现访问路径发生404的有可能是项目引用路径错误，本文没有修改过打包路径，用的是默认路径 `docs/.vuepress/dist`，如不一致请修改。
+3. 本文所使用的actions版本是v3，以往教程中所讲到的使用的是`JamesIves/github-pages-deploy-action` v2版本，新版本语法已经发生了变化，如果继续使用就会发生错误。
+4. **ACCESS_TOKEN** 一定要和github上的sectets上的名称相同。
 
 ## 参考资料
 - [vuepress官网](https://vuepress.vuejs.org/zh/ "vuepress官网")
 - [使用 GitHub Actions 自动部署博客](https://vuepress-theme-reco.recoluan.com/views/other/github-actions.html "部署博客")
 - [阮一峰 GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 - [MarkDown 基本语法](https://www.jianshu.com/p/191d1e21f7ed)
+## 小结
+本文介绍了如何使用 **vuepress** 搭建博客，并使用**GitHub Pages** 部署到线上环境，但是部署的流程都是手动操作的有些麻烦，文章后半部分内容简单介绍了**GitHub Actions**，实现了当我们要发布一篇文章的时候只要`push`到github就能实现自动化打包发布流程，让双手从机械的流程中解脱，专注于写作。虽然能够简单实现一个博客网站，但是vuepress的更有趣的玩法还有待大家自己去学习。
+
+以上就是本篇文章的所有内容。最后，感谢您阅读这篇文章，有任何问题或反馈请给我留言。
