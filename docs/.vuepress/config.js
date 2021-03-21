@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-02-24 22:53:11
+ * @LastEditTime: 2021-03-20 12:23:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /hbtblog/docs/.vuepress/config.js
+ */
 module.exports = {
   dest: 'public',
   title: "Hbt'blog",
@@ -24,7 +32,7 @@ module.exports = {
         text: "GitHub",
         link: "https://github.com/huabingtao",
         target: "_blank",
-      },
+      }
     ],
     footer: {
       contact: [
