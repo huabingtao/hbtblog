@@ -4,7 +4,7 @@
  * @Author: huabingtao
  * @Date: 2021-04-13 12:17:25
  * @LastEditors: huabingtao
- * @LastEditTime: 2021-04-13 14:14:10
+ * @LastEditTime: 2021-04-13 16:14:01
  * @FilePath: /hbtblog/docs/_posts/vscode-plugin.md
 -->
 ---
@@ -35,6 +35,16 @@ location: ShangHai
 }
 ```
 ## background
+
+```json
+"background.useDefault":false, 
+  "background.style":{ "content":"''", "pointer-events":"none", "position":"absolute", "top":"0", "right":"0", "width":"100%", "height":"100%", "z-index":"99999", "background.repeat":"no-repeat", "background-size":"cover", "opacity":0.1 },
+  "background.customImages": [  
+    "file:///Users/huazhu/bg/6.jpg",
+    "file:///Users/huazhu/bg/1.jpg",
+    "file:///Users/huazhu/bg/3.jpg"
+]
+```
 
 ## GitLens
 
