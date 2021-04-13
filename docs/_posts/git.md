@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-13 12:17:25
+ * @LastEditTime: 2021-04-13 13:47:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /hbtblog/docs/_posts/git.md
+-->
 ---
 title: git 常用命令
 date: 2021-02-23
@@ -28,6 +36,14 @@ git commit --amend
 - subject: commit 的概述
 
 ## 设置用户名和邮箱
+### 查看git配置
+`git config --list`
+### 本地设置
+```git
+git config user.name "Your Name"
+git config user.email "email@example.com"
+```
+### 全局设置
 ```git
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
@@ -59,3 +75,10 @@ fi
 ```
 
 执行 `./email.sh`
+
+## Mac－－查看公钥
+
+```sh
+cd ~/.ssh
+cat id_rsa.pub
+```
