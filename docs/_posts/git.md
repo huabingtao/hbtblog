@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-13 12:17:25
- * @LastEditTime: 2021-04-13 13:47:28
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-04-22 18:07:09
+ * @LastEditors: huabingtao
  * @Description: In User Settings Edit
  * @FilePath: /hbtblog/docs/_posts/git.md
 -->
@@ -20,8 +20,42 @@ location: ShangHai
 ``` git
 git commit --amend
 ```
-### 添加源 
+
 输入i进入修改模式，修改好注释后，按Esc键 退出编辑模式，输入:wq保存并退出。ok，修改完成。
+### 添加源 
+
+查看远程关联库
+
+`git remote -v`
+
+添加关联
+
+`git remote add origin xxxx.git`
+
+删除关联
+
+`git remote rm origin`
+
+## 自定义Git
+
+### 配置别名
+
+git 当前状态 `git st`
+`git config --global alias.st status`
+
+co表示checkout，ci表示commit，br表示branch
+
+```sh
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+```
+git 最后一次提交的log `git last `
+`git config --global alias.last 'log -1'`
+
+git lg 
+`git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"`
+
 ## git commit 提交规范
 - init: 初始化
 - feat: 新特性
