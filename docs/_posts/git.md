@@ -116,3 +116,7 @@ fi
 cd ~/.ssh
 cat id_rsa.pub
 ```
+
+## [解决]git-ssh: connect to host github.com port 22: Connection timed out
+
+[文章链接](https://www.jianshu.com/p/c3aac5024877)
