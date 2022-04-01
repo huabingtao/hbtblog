@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-13 12:17:25
- * @LastEditTime: 2021-04-22 18:07:09
+ * @LastEditTime: 2021-04-27 13:35:35
  * @LastEditors: huabingtao
  * @Description: In User Settings Edit
  * @FilePath: /hbtblog/docs/_posts/git.md
@@ -16,7 +16,26 @@ author: BingBing
 location: ShangHai
 ---
 
-## 修改最后一次注释
+## .gitignore忽略规则及清除缓存
+
+清除缓存:
+
+如果在开发的过程中添加或者修改了`.gitignore`文件，那么它可能不会生效，因为一些需要忽略的文件已经加入了git的追踪列表中，可以通过清除git缓存来使新的.gitignore生效。方法如下：
+
+```sh
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```
+
+## 常用操作
+
+### 新建分支
+
+git checkout -b xxxx
+
+### 修改最后一次注释
+
 ``` git
 git commit --amend
 ```
@@ -110,8 +129,9 @@ fi
 
 执行 `./email.sh`
 
-## Mac－－查看公钥
+## 秘钥配置
 
+### 查看秘钥如果没有密钥则不会有此文件夹
 ```sh
 cd ~/.ssh
 cat id_rsa.pub
@@ -120,3 +140,10 @@ cat id_rsa.pub
 ## [解决]git-ssh: connect to host github.com port 22: Connection timed out
 
 [文章链接](https://www.jianshu.com/p/c3aac5024877)
+### 生成新的秘钥
+```sh
+ssh-keygen -t rsa -C "eamil"
+```
+你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，因为这个Key仅用于简单的服务，所以也无需设置密码。
+
+

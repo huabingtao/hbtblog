@@ -60,3 +60,17 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 查看版本 `yarn --version`
 ## nrm
 
+## Mac下查看隐藏文件
+
+### show
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+```
+
+### hide
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+```
+[参考文章](https://www.zhihu.com/question/24635640/answer/127004307)
