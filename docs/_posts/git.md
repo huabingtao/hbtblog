@@ -1,19 +1,11 @@
-<!--
- * @Author: your name
- * @Date: 2021-04-13 12:17:25
- * @LastEditTime: 2021-04-27 13:35:35
- * @LastEditors: huabingtao
- * @Description: In User Settings Edit
- * @FilePath: /hbtblog/docs/_posts/git.md
--->
 ---
-title: git 常用命令
-date: 2021-02-23
-show: false
-tags:
-  - GIT
-author: BingBing
-location: ShangHai
+  title: git 常用命令
+  date: 2021-02-23
+  show: false
+  tags:
+    - GIT
+  author: BingBing
+  location: ShangHai
 ---
 
 ## .gitignore忽略规则及清除缓存

@@ -1,19 +1,10 @@
-<!--
- * @Description: description
- * @Version: 1.0
- * @Author: huabingtao
- * @Date: 2021-04-13 12:17:25
- * @LastEditors: huabingtao
- * @LastEditTime: 2021-04-13 16:14:01
- * @FilePath: /hbtblog/docs/_posts/vscode-plugin.md
--->
 ---
-title: vscode 插件合集
-date: 2021-02-7
-tags:
-  - js
-author: BingBing
-location: ShangHai
+  title: vscode 插件合集
+  date: 2021-02-7
+  tags:
+    - js
+  author: BingBing
+  location: ShangHai
 ---
 
 ## koroFileHeader
