@@ -188,4 +188,31 @@ overflow: hidden;
 
 
 
+## 适配iphone底部安全区域
+
+1. 底部fixed的元素：
+
+```css
+  padding-bottom: constant(safe-area-inset-bottom); 
+  padding-bottom:env(safe-area-inset-bottom)
+```
+
+> fixed  bottom!= 0 的case， 1不生效时，可用2
+
+2. 本身有padding值，把padding-bottom一起计算进去
+
+```css
+  padding-bottom:calc(15rpx + constant(safe-area-inset-bottom));
+  padding-bottom:calc(15rpx + env(safe-area-inset-bottom))
+```
+
+3. 用高度加出来安全区域
+
+```css
+  height:calc(80rpx + constant(safe-area-inset-bottom));
+  height:calc(80rpx + env(safe-area-inset-bottom));
+```
+
+> 注意 constant与env顺序不能改变，先constant再env
+
 

@@ -13,7 +13,7 @@ sidebarDepth: 5
 
 - 华炳淘/男/1993
 - 工作年限：6 年
-- 个人博客：http://blog.huabingtao.com
+- 个人博客：https://huabingtao.github.io/hbtblog/
 - 掘金：https://juejin.im/user/592418062f301e006b2db045/posts
 - Github：https://github.com/huabingtao
 - 目前职位：web 前端高级研发工程师(Vue+React+Node)
@@ -27,7 +27,7 @@ sidebarDepth: 5
 
 以下均为我熟练使用的技能
 
-- 前端框架：Vue3/React18
+- 前端框架：Vue3/React
 - 前端 ui 框架: Element-ui/Ant-design/iview/Ant-mobile/Taro-ui/Bootstrap
 - 前端工具：Typescript/Webpack/Sass/Less/Styles
 - 后端开发：Node/Koa2/Express/Nginx
@@ -43,7 +43,7 @@ sidebarDepth: 5
 - 主导公司B端组件库设计思路、代码规范、开发流程、组件测试相关工作
 - 参与公司其他B端项目研发与维护
 
-### 上海珍岛科技有限公司 （ 2020 年 8 月 ~ 2021 年四月 ）
+### 上海珍岛科技有限公司 （ 2020 年 8 月 ~ 2021 年 4月 ）
 
 - 带领团队完成了商业云项目从0到1的建设。
 - 参与优化项目首屏加载优化部分，加载速度提升30%。
@@ -66,14 +66,24 @@ sidebarDepth: 5
 ### 企业级移动端ui组件库(Vinko)
 
 项目描述:
-Vinko是一个100%自研的企业级移动端组件库，提供了一整套基础的 UI 组件以及常用的业务组件，这些组件都已经在华住的各类 H5 业务中广泛使用。
+Vinko是一个完全自研的企业级移动端组件库，提供了一整套基础的 UI 组件以及常用的业务组件，这些组件都已经在华住的各类 H5 业务中广泛使用。
 
 技术栈：
-**React18 ReactHook Typescript Jest Dumi**
+**React ReactHook Typescript Jest Dumi**
 
 主要内容:
 
+- 40+ 高质量组件
+- 完善的中英文文档和示例
+- 支持按需引入
+- 支持主题定制
+- 支持 TS 类型识别
 
+主要技术：
+- 使用 **husky** 和 **lint-staged** 对提交的代码进行检测避免不规范的代码提交，使用 **commitlint** 避免不符合规范的commit进入仓库。
+- 使用 **Typescript** 编写，使用 **Jest** 配合@testing-library/react做组件单元测试。
+- 使用Dumi框架构建组件库文档，使用Rollup输出 **umd/cjs/esm** 产物并支持按需加载。
+- 使用 **Github Pages** 以及 Github Actions 完成文档站点自动部署。
 
 ### 个人博客平台
 
@@ -88,10 +98,10 @@ Vinko是一个100%自研的企业级移动端组件库，提供了一整套基�
 - 使用 **validator.js** 库编写中间件校验入参，那么在服务端的任何异常都被中间件所捕获并以错误的方式传送给客户端，客户端只需要将错误类型判断可以友好的给用户提示，在开发阶段提升了开发效率。
 - 点赞功能需要对操作人和日记进行判断，所以这里需要改动两个表里的记录那么由于是异步操作可能引起数据库数据不一致的问题，因此用到了到了**数据库事物**使点赞与点赞数保持一致。
 - 使用 **requireDirectory** 做自动路由加载,提高了开发效率还规避了一定些由单词拼写错误导致难以排查的 bug。
-### 可视化建站平台
+### 低代码可视化建站
 
 项目描述：
-拖拽的方式搭建小程序、h5页面达到不写一行代码生成多个页面的目的。通过后台返回json数据就可以产生一个由输入框、选择日期控件、上传图片、单选、多选按钮等组成的**h5表单页面**,。
+拖拽的方式搭建小程序、h5页面达到不写一行代码生成多个页面的目的。通过后台返回json数据就可以产生一个由输入框、选择日期控件、上传图片、单选、多选按钮等组成的**h5表单页面**。
 
 技术栈:
 **Vue2.6 Vue-cli3 Element-ui Vant-ui**
