@@ -216,3 +216,43 @@ overflow: hidden;
 > 注意 constant与env顺序不能改变，先constant再env
 
 
+## js 比较两个时间大小
+
+```js
+  export const compareDate = (d1, d2) => {
+    let date1 = new Date(Date.parse(d1)).getTime()
+    let date2 = new Date(Date.parse(d2)).getTime()
+    return date1 > date2
+  }
+```
+
+## React 阻止事件冒泡
+
+```js
+//阻止事件冒泡
+  stopPro(e){
+    e.stopPropagation();
+    return false;
+  }
+<div className="tkContent" onTouchStart={this.stopPro.bind(this)}></div>
+```
+
+## React中父组件获取子组件数据的3中方式 
+
+[参考文章](https://www.cnblogs.com/lguow/p/16423517.html)
+
+## 利用exif.js解决ios手机上传竖拍照片旋转90度问题
+
+[参考文章](http://xiaoshi.nbedu.net.cn/ReadNews_jiandan.asp?NewsID=12946)
+
+## React中如何在Hooks函数式的写法中强制渲染？
+
+```js
+// 引用 useReducer 
+import { useReducer } from 'react'
+// 定义 useReducer
+const forceUpdate = useReducer((bool) => !bool)[1]
+// 调用 forceUpdate
+forceUpdate()
+// OK!
+```
