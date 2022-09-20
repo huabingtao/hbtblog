@@ -22,6 +22,11 @@ git commit -m 'update .gitignore'
 
 ## 常用操作
 
+### 克隆指定分支
+
+``` sh
+git clone -b dev-md https://gitee.com/mindspore/mindscience.git
+```
 ### 新建分支
 
 git checkout -b xxxx
