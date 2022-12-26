@@ -256,3 +256,15 @@ const forceUpdate = useReducer((bool) => !bool)[1]
 forceUpdate()
 // OK!
 ```
+
+## 检查设备类型
+
+使用navigator.userAgent 判断是移动设备还是电脑设备：
+```js
+const judgeDeviceType =
+      () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(navigator.userAgent) ? 'Mobile' : 'PC';
+
+judgeDeviceType()  // PC | Mobile
+```
+
+[参考文章](https://juejin.cn/post/7145623660680708104)
