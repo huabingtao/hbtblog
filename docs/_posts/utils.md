@@ -65,3 +65,8 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
 ```
 [参考文章](https://www.zhihu.com/question/24635640/answer/127004307)
+
+### vscode 设置双击可以选中减号连接的文字
+```json
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+```
