@@ -4,7 +4,7 @@
   show: false
   tags:
     - MAC
-  author: BingBing
+  author: Link
   location: ShangHai
 ---
 

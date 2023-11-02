@@ -4,7 +4,7 @@ date: 2022-08-29
 tags:
   - js
   - 算法
-author: ABing
+author: Link
 location: ShangHai
 ---
 ## 前言

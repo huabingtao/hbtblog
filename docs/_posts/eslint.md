@@ -4,7 +4,7 @@ date: 2020-04-27
 tags:
   - Eslint
   - Typescript
-author: BingBing
+author: link
 location: ShangHai
 ---
 

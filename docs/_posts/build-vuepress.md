@@ -4,7 +4,7 @@ date: 2021-02-07
 tags:
   - vuepress
   - vue
-author: BingBing
+author: link
 location: ShangHai
 ---
 
@@ -266,7 +266,7 @@ jobs:
 1. 如果你打算发布到 `https://<USERNAME>.github.io/，` 则不需要配置 `.vuepress/config.js` base 属性,因为 base 默认是 "/"。
 2. 发布到线上后发现css样式丢失，经查看发现访问路径发生404的有可能是项目引用路径错误，本文没有修改过打包路径，用的是默认路径 `docs/.vuepress/dist`，如不一致请修改。
 3. 本文所使用的actions版本是v3，以往教程中所讲到的使用的是`JamesIves/github-pages-deploy-action` v2版本，新版本语法已经发生了变化，如果继续使用就会发生错误。
-4. **ACCESS_TOKEN** 一定要和github上的sectets上的名称相同。
+4. **ACCESS_TOKEN** 一定要和github上的asectets上的名称相同。
 
 ## 参考资料
 - [vuepress官网](https://vuepress.vuejs.org/zh/ "vuepress官网")

@@ -3,7 +3,7 @@ title: 朴实无华的JavaScript闭包
 date: 2020-07-21
 tags:
   - js
-author: BingBing
+author: link
 location: ShangHai
 ---
 

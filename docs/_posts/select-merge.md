@@ -1,9 +1,10 @@
 ---
+show: false
 title: js 选择排序解析
 date: 2022-08-26
 tags:
   - js
-author: BingBing
+author: Link
 location: ShangHai
 ---
 
