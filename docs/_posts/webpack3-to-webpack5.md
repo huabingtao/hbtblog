@@ -9,7 +9,7 @@
 ---
 
 ## 背景
-众所周知把一个大象装冰箱需要三步，升级一个老项目的webpack需要几步呢？由于是4年的老项目采用vue2和webpack3构建的，随着时间的推移项目的不断迭代，页面文件数量日益增长打包和运行耗费的时间也逐渐增加，已经严重影响到了开发体验和开发效率，所以优化也就被提上日程。但一次把所有的地方都升级一遍不太现实而且风险也比较大，所以选择逐步升级和优化是一个很好的解决办法。我打算先将打包工具进行升级毕竟过去了4年webpack已经迭代了很多个版本让我们看看webpack5会有怎样的表现吧。
+众所周知把一个大象装冰箱需要三步，升级一个老项目的webpack需要几步呢？由于是4年的老项目采用 vue2 和 webpack3 构建的，随着时间的推移项目的不断迭代，页面文件数量日益增长打包和运行耗费的时间也逐渐增加，已经严重影响到了开发体验和开发效率，所以优化也就被提上日程。但一次把所有的地方都升级一遍不太现实而且风险也比较大，所以选择逐步升级和优化是一个很好的解决办法。我打算先将打包工具进行升级，毕竟过去了4年 webpack 已经迭代了很多个版本让我们看看 webpack5 会有怎样的表现吧。
 
 ## 升级流程图
 ![升级流程导图](../image/webpack3-5/image-4.png)
@@ -185,7 +185,7 @@
 ## 具体配置
 
 ### 修改webpack运行方式
-webpack运行方式需要改为 webpack server，并在打包命令的同时通过 cross-env 注入环境变量。
+webpack 运行方式需要改为 webpack server，并在打包命令的同时通过 cross-env 注入环境变量。
 ```json
 "scripts": {
 		"dev": "cross-env NODE_ENV=development npx webpack server --config build/webpack.dev.conf.js",
@@ -204,7 +204,7 @@ webpack运行方式需要改为 webpack server，并在打包命令的同时通�
 - 引入 vue-loader，移除 vue-loader.conf.js 配置文件。
 - 移除 url-loader 使用 webpack5自带 asset/resource 模块解析图片字体等静态资源。
 - 使用 mini-css-extract-plugin 压缩 css（开发环境下关闭）。
-- 使用 dart-sass 替换 node-sass（解决Node.js版本必须和node-sass对应问题常常因为项目较多在多个项目切换过程中需要频繁切换NodeJS版本，以及经常因为网络问题经常安装失败问题）。
+- 使用 dart-sass 替换 node-sass（解决 Node.js 版本必须和 node-sass 对应问题常常因为项目较多在多个项目切换过程中需要频繁切换 NodeJS 版本，以及经常因为网络不稳定导致安装失败等问题）。
 
 ### webpack.dev.conf.js 配置
 #### 清理配置
@@ -213,8 +213,8 @@ webpack运行方式需要改为 webpack server，并在打包命令的同时通�
 - 配置 watchOptions.poll = 1000 （每秒监听一次文件变化）。
 
 #### 配置 devServer 
-- publicPath 迁移到 devServer.static对象下。
-- overlay 属性移动到 devServer.client对象中。
+- publicPath 迁移到 devServer.static 对象下。
+- overlay 属性移动到 devServer.client 对象下。
 - 移除 watch、hot、module.rules、clientLogLevel、contentBase、quiet 等配置。
 
 #### 配置 plugins 
@@ -237,7 +237,7 @@ webpack运行方式需要改为 webpack server，并在打包命令的同时通�
 
 #### 配置 optimization
 - 在 optimization.minimizer 对象下使用 terser-webpack-plugin 插件开启多线程压缩 js 并配置删除注释和日志。
-- 在 optimization.minimizer 对象下使用 css-minimizer-webpack-plugin 插件压缩 css
+- 在 optimization.minimizer 对象下使用 css-minimizer-webpack-plugin 插件压缩 css。
 
 ## 升级后表现
 
@@ -255,5 +255,6 @@ webpack运行方式需要改为 webpack server，并在打包命令的同时通�
 
 ## 写在最后
 那么回到文章开始时我提出的问题，升级一个老项目的 webpack 需要几步呢？如果你耐心看完的话相信你肯定可以不假思索的回答上来。我们从备份项目和 Node.js 版本到升级 webpack 接着升级了和 webpack 相关的 plugin 和 loader 最后修改了 webpack 的配置文件至此我们完成了整个 webpack 的升级，想想还有点小激动呢。
-如果你所参与的项目恰好和博主有类似的情况不妨浅浅的尝试一下喔，如果这篇文章对你有所帮助请给我一个三连支持一下，哪怕是一个免费的赞呢。
-最后，感谢您阅读这篇文章，有任何问题或反馈请给我留言。
+如果你所参与的项目恰好和博主有类似的情况不妨可以尝试一下喔。
+
+最后，感谢您阅读这篇文章，有任何问题或反馈请给我留言，如果这篇文章对你有所帮助请给我一个三连支持一下，哪怕是一个免费的赞呢。
