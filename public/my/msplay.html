@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面试学习计划 | Hbt&#39;blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <meta name="description" content="
+Vue源码
+init 函数
+
+export function initMixin (Vue: Class) {
+  Vue.prototype._init = function (options?: Object) {
+    /* 省略无关代码... */
+    //对生命周期做初始化操作
+    initLifecycle(vm)
+    // ...">
+    
+    <link rel="preload" href="/hbtblog/assets/css/0.styles.9bd370b3.css" as="style"><link rel="preload" href="/hbtblog/assets/js/app.3e20466e.js" as="script"><link rel="preload" href="/hbtblog/assets/js/7.0a2fe451.js" as="script"><link rel="preload" href="/hbtblog/assets/js/12.9f29600d.js" as="script"><link rel="preload" href="/hbtblog/assets/js/26.8c7f45f4.js" as="script"><link rel="prefetch" href="/hbtblog/assets/js/10.222717fe.js"><link rel="prefetch" href="/hbtblog/assets/js/11.c0eb84f1.js"><link rel="prefetch" href="/hbtblog/assets/js/13.80a796a1.js"><link rel="prefetch" href="/hbtblog/assets/js/14.48ff9673.js"><link rel="prefetch" href="/hbtblog/assets/js/15.af271a69.js"><link rel="prefetch" href="/hbtblog/assets/js/16.4b850c7b.js"><link rel="prefetch" href="/hbtblog/assets/js/17.0de27dbd.js"><link rel="prefetch" href="/hbtblog/assets/js/18.57e90d03.js"><link rel="prefetch" href="/hbtblog/assets/js/19.c8511f45.js"><link rel="prefetch" href="/hbtblog/assets/js/20.7257175e.js"><link rel="prefetch" href="/hbtblog/assets/js/21.a6f3f69c.js"><link rel="prefetch" href="/hbtblog/assets/js/22.da240fa4.js"><link rel="prefetch" href="/hbtblog/assets/js/23.aea51c44.js"><link rel="prefetch" href="/hbtblog/assets/js/24.5f2abf11.js"><link rel="prefetch" href="/hbtblog/assets/js/25.f279e8e2.js"><link rel="prefetch" href="/hbtblog/assets/js/27.140ee535.js"><link rel="prefetch" href="/hbtblog/assets/js/3.19142d3d.js"><link rel="prefetch" href="/hbtblog/assets/js/4.7e366b48.js"><link rel="prefetch" href="/hbtblog/assets/js/5.37cb2da4.js"><link rel="prefetch" href="/hbtblog/assets/js/6.0fec0789.js"><link rel="prefetch" href="/hbtblog/assets/js/8.42723363.js"><link rel="prefetch" href="/hbtblog/assets/js/9.2a8860d3.js"><link rel="prefetch" href="/hbtblog/assets/js/vuejs-paginate.b1e5c227.js">
+    <link rel="stylesheet" href="/hbtblog/assets/css/0.styles.9bd370b3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/hbtblog/" class="nav-link home-link">Hbt'blog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="https://juejin.cn/user/8451822992855/posts" target="_blank" rel="noopener noreferrer" class="nav-link external">掘金</a></li><li class="nav-item"><a href="https://github.com/huabingtao" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/hbtblog/" class="nav-link mobile-home-link">Hbt'blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="https://juejin.cn/user/8451822992855/posts" target="_blank" rel="noopener noreferrer" class="nav-link external">掘金</a></li><li class="mobile-nav-item"><a href="https://github.com/huabingtao" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h1 id="面试学习计划"><a href="#面试学习计划" class="header-anchor">#</a> 面试学习计划</h1> <h2 id="vue源码"><a href="#vue源码" class="header-anchor">#</a> Vue源码</h2> <h3 id="init-函数"><a href="#init-函数" class="header-anchor">#</a> init 函数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>export function initMixin (Vue: Class&lt;Component&gt;) {
+  Vue.prototype._init = function (options?: Object) {
+    /* 省略无关代码... */
+    //对生命周期做初始化操作
+    initLifecycle(vm)
+    //事件初始化
+    initEvents(vm)
+    initRender(vm)
+    //调用beforeCreate生命周期函数
+    callHook(vm, 'beforeCreate')
+    initInjections(vm) // resolve injections before data/props
+    //初始化处理data/props/computed/watch等
+    initState(vm)
+    initProvide(vm) // resolve provide after data/props
+    //调用created生命周期函数
+    callHook(vm, 'created')
+    /* 省略无关代码... */
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="vue响应式原理"><a href="#vue响应式原理" class="header-anchor">#</a> Vue响应式原理</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const Observer = function(data) {
+  // 循环修改为每个属性添加get set
+  for (let key in data) {
+    defineReactive(data, key);
+  }
+}
+
+const defineReactive = function(obj, key) {
+  // 局部变量dep，用于get set内部调用
+  const dep = new Dep();
+  // 获取当前值
+  let val = obj[key];
+  Object.defineProperty(obj, key, {
+    // 设置当前描述属性为可被循环
+    enumerable: true,
+    // 设置当前描述属性可被修改
+    configurable: true,
+    get() {
+      console.log('in get');
+      // 调用依赖收集器中的addSub，用于收集当前属性与Watcher中的依赖关系
+      dep.depend();
+      return val;
+    },
+    set(newVal) {
+      if (newVal === val) {
+        return;
+      }
+      val = newVal;
+      // 当值发生变更时，通知依赖收集器，更新每个需要更新的Watcher，
+      // 这里每个需要更新通过什么断定？dep.subs
+      dep.notify();
+    }
+  });
+}
+
+const observe = function(data) {
+  return new Observer(data);
+}
+
+const Vue = function(options) {
+  const self = this;
+  // 将data赋值给this._data，源码这部分用的Proxy所以我们用最简单的方式临时实现
+  if (options &amp;&amp; typeof options.data === 'function') {
+    this._data = options.data.apply(this);
+  }
+  // 挂载函数
+  this.mount = function() {
+    new Watcher(self, self.render);
+  }
+  // 渲染函数
+  this.render = function() {
+    with(self) {
+      _data.text;
+    }
+  }
+  // 监听this._data
+  observe(this._data);  
+}
+
+const Watcher = function(vm, fn) {
+  const self = this;
+  this.vm = vm;
+  // 将当前Dep.target指向自己
+  Dep.target = this;
+  // 向Dep方法添加当前Wathcer
+  this.addDep = function(dep) {
+    dep.addSub(self);
+  }
+  // 更新方法，用于触发vm._render
+  this.update = function() {
+    console.log('in watcher update');
+    fn();
+  }
+  // 这里会首次调用vm._render，从而触发text的get
+  // 从而将当前的Wathcer与Dep关联起来
+  this.value = fn();
+  // 这里清空了Dep.target，为了防止notify触发时，不停的绑定Watcher与Dep，
+  // 造成代码死循环
+  Dep.target = null;
+}
+
+const Dep = function() {
+  const self = this;
+  // 收集目标
+  this.target = null;
+  // 存储收集器中需要通知的Watcher
+  this.subs = [];
+  // 当有目标时，绑定Dep与Wathcer的关系
+  this.depend = function() {
+    if (Dep.target) {
+      // 这里其实可以直接写self.addSub(Dep.target)，
+      // 没有这么写因为想还原源码的过程。
+      Dep.target.addDep(self);
+    }
+  }
+  // 为当前收集器添加Watcher
+  this.addSub = function(watcher) {
+    self.subs.push(watcher);
+  }
+  // 通知收集器中所的所有Wathcer，调用其update方法
+  this.notify = function() {
+    for (let i = 0; i &lt; self.subs.length; i += 1) {
+      self.subs[i].update();
+    }
+  }
+}
+
+const vue = new Vue({
+  data() {
+    return {
+      text: 'hello world'
+    }; 
+  }
+})
+
+vue.mount(); // in get
+vue._data.text = '123'; // in watcher update /n in get
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br></div></div><h3 id="computed和watch区别是什么"><a href="#computed和watch区别是什么" class="header-anchor">#</a> Computed和Watch区别是什么?</h3> <p>计算属性和watch实际上都有监听属性变化的能力。只不过计算属性可以当做Vue实例上的响应式数据使用(通过Object.defineProperty定义了同名属性)，会自动监听计算属性函数调用到的响应式数据的变更，并且会返回计算属性函数的返回值；watcher是显式的为要监听的数据创建一个Watcher监听数据变更，不能作为vue实例上的响应式数据值使用。</p> <p>计算属性 computed</p> <ol><li>支持缓存，只有依赖数据发生改变，才会重新进行计算；</li> <li>不支持异步，当 computed 内有异步操作时无效，无法监听数据的变化；</li> <li>computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的。也就是基于 data 中声明过或者父组件传递的 props 中的数据通过计算得到的值；</li> <li>如果一个属性是由其他属性计算而来的，这个属性依赖其他属性 是一个多对一或者一对一，一般用computed；</li> <li>如果 computed 属性值是函数，那么默认会走 get 方法，函数的返回值就是属性的属性值；在computed中的，属性都有一个get和一个 set 方法，当数据变化时，调用 set 方法；</li></ol> <p>侦听属性 watch：</p> <ol><li>不支持缓存，数据变化，直接会触发相应的操作；</li> <li>watch 支持异步操作；</li> <li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值；</li> <li>当一个属性发生变化时，需要执行对应的操作，一对多；</li> <li>监听数据必须是 data 中声明过或者父组件传递过来的 props 中的数据。当数据变化时触发其他操作，函数有两个参数：
+immediate：组件加载立即触发回调函数执行；
+deep: 深度监听；为了发现对象内部值的变化，复杂类型的数据时使用，例如：数组中的对象内容的改变，注意：监听数组的变动不需要这么做。注意：deep无法监听到数组的变动和对象的新增，参考vue数组变异,只有以响应式的方式触发才会被监听到；</li></ol> <p>总结：在 computed 和 watch 方面，一个是计算，一个是观察，在语义上是有区别的。
+当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的，这是和 computed 最大的区别。</p> <h3 id="vue-diff算法"><a href="#vue-diff算法" class="header-anchor">#</a> Vue diff算法</h3> <p>diff的过程就是调用patch函数，就像打补丁一样修改真实dom</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// body下的 &lt;div id=&quot;v&quot; class=&quot;classA&quot;&gt;&lt;div&gt; 对应的 oldVnode 就是
+
+{
+  el:  div  //对真实的节点的引用，本例中就是document.querySelector('#id.classA')
+  tagName: 'DIV',   //节点的标签
+  sel: 'div#v.classA'  //节点的选择器
+  data: null,       // 一个存储节点属性的对象，对应节点的el[prop]属性，例如onclick , style
+  children: [], //存储子节点的数组，每个子节点也是vnode结构
+  text: null,    //如果是文本节点，对应文本节点的textContent，否则为null
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ol><li>sameVnode函数就是看这两个节点是否值得比较，代码相当简单：</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>function sameVnode(oldVnode, vnode){
+	return vnode.key === oldVnode.key &amp;&amp; vnode.sel === oldVnode.sel
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>当节点不值得比较，进入else中:
+取得oldvnode.el的父节点，parentEle是真实dom
+createEle(vnode)会为vnode创建它的真实dom，令vnode.el =真实dom
+parentEle将新的dom插入，移除旧的dom
+当不值得比较时，新节点直接把老节点整个替换了</p> <ol start="2"><li>两个节点值得比较时，会调用patchVnode函数</li></ol> <p>首先，我们拿到新旧节点的数组，然后初始化四个指针，分别指向新旧节点的开始位置和结束位置，进行两两对比，若是 新的开始节点和旧开始节点相同，则都向后面移动，若是结尾节点相匹配，则都前移指针。若是新开始节点和旧结尾节点匹配上了，则会将旧的结束节点移动到旧的开始节点前。若是旧开始节点和新的结束节点相匹配，则会将旧开始节点移动到旧结束节点的后面。若是上述节点都没配有匹配上，则会进行一个兜底逻辑的判断，判断开始节点是否在旧节点中，若是存在则复用，若是不存在则创建。最终跳出循环，进行裁剪或者新增，若是旧的开始节点小于旧的结束节点，则会删除之间的节点，反之则是新增新的开始节点到新的结束节点。</p> <h2 id="js"><a href="#js" class="header-anchor">#</a> js</h2> <h3 id="数组扁平化"><a href="#数组扁平化" class="header-anchor">#</a> 数组扁平化</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>let arr = [1, [2, [3, 4, 5]]];
+function flatten(arr) {
+  let result = [];
+
+  for(let i = 0; i &lt; arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      result = result.concat(flatten(arr[i]));
+    } else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="手写深拷贝"><a href="#手写深拷贝" class="header-anchor">#</a> 手写深拷贝</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * 深拷贝
+ * @param {Object} obj 要拷贝的对象
+ * @param {Map} map 用于存储循环引用对象的地址
+ */
+
+function deepClone(obj = {}, map = new Map()) {
+  if (typeof obj !== &quot;object&quot;) {
+    return obj;
+  }
+  if (map.get(obj)) {
+    return map.get(obj);
+  }
+
+  let result = {};
+  // 初始化返回结果
+  if (
+    obj instanceof Array ||
+    // 加 || 的原因是为了防止 Array 的 prototype 被重写，Array.isArray 也是如此
+    Object.prototype.toString(obj) === &quot;[object Array]&quot;
+  ) {
+    result = [];
+  }
+  // 防止循环引用
+  map.set(obj, result);
+  for (const key in obj) {
+    // 保证 key 不是原型属性
+    if (obj.hasOwnProperty(key)) {
+      // 递归调用
+      result[key] = deepClone(obj[key], map);
+    }
+  }
+
+  // 返回结果
+  return result;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h3 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h3> <p>在一个函数中返回一个函数就形成了闭包
+执行环境</p> <h3 id="call-apply-bind的实现"><a href="#call-apply-bind的实现" class="header-anchor">#</a> call apply bind的实现</h3> <p>call</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.myCall = function (context) {
+  // 判断调用对象
+  if (typeof this !== &quot;function&quot;) {
+    throw new Error(&quot;Type error&quot;);
+  }
+  // 首先获取参数
+  let args = [...arguments].slice(1);
+  let result = null;
+  // 判断 context 是否传入，如果没有传就设置为 window
+  context = context || window;
+  // 将被调用的方法设置为 context 的属性
+  // this 即为我们要调用的方法
+  context.fn = this;
+  // 执行要被调用的方法
+  result = context.fn(...args);
+  // 删除手动增加的属性方法
+  delete context.fn;
+  // 将执行结果返回
+  return result;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>apply</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.myApply = function (context) {
+  if (typeof this !== &quot;function&quot;) {
+    throw new Error(&quot;Type error&quot;);
+  }
+  let result = null;
+  context = context || window;
+  // 与上面代码相比，我们使用 Symbol 来保证属性唯一
+  // 也就是保证不会重写用户自己原来定义在 context 中的同名属性
+  const fnSymbol = Symbol();
+  context[fnSymbol] = this;
+  // 执行要被调用的方法
+  if (arguments[1]) {
+    result = context[fnSymbol](...arguments[1]);
+  } else {
+    result = context[fnSymbol]();
+  }
+  delete context[fnSymbol];
+  return result;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>bind</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.myBind = function (context) {
+  // 判断调用对象是否为函数
+  if (typeof this !== &quot;function&quot;) {
+    throw new Error(&quot;Type error&quot;);
+  }
+  // 获取参数
+  const args = [...arguments].slice(1),
+  const fn = this;
+  return function Fn() {
+    return fn.apply(
+      this instanceof Fn ? this : context,
+      // 当前的这个 arguments 是指 Fn 的参数
+      args.concat(...arguments)
+    );
+  };
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="new-实现"><a href="#new-实现" class="header-anchor">#</a> new 实现</h3> <p>首先创一个新的空对象。
+根据原型链，设置空对象的 <strong>proto</strong> 为构造函数的 prototype 。
+构造函数的 this 指向这个对象，执行构造函数的代码（为这个新对象添加属性）。
+判断函数的返回值类型，如果是引用类型，就返回这个引用类型的对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function myNew(context) {
+  const obj = new Object();
+  obj.__proto__ = context.prototype;
+  const res = context.apply(obj, [...arguments].slice(1));
+  return typeof res === &quot;object&quot; ? res : obj;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="vue相关面试题"><a href="#vue相关面试题" class="header-anchor">#</a> vue相关面试题</h2> <h3 id="vue3为什么要添加新的组合api-它可以解决哪些问题"><a href="#vue3为什么要添加新的组合api-它可以解决哪些问题" class="header-anchor">#</a> vue3为什么要添加新的组合API，它可以解决哪些问题</h3> <p>在 Vue2.0 中，随着功能的增加，组件越来越复杂，维护起来也越来越难，而难以维护的根本原因是 Vue 的 API 设计迫使开发者使用监视、计算、方法 Option 组织代码，而不是实际的业务逻辑。</p> <p>另外 Vue2.0 缺乏一个简单而低成本的机制来完成逻辑重用，虽然你可以 minxis 完全重用逻辑，但是当 mixin 更多的时候，就使得很难找到相应的数据，计算出来也许是从中 mixin 的方法，使得类型推断变得困难。</p> <p>因此组合API外观，主要是解决选项API带来的问题，首先是代码组织，组合API开发者可以根据业务逻辑组织自己的代码，让代码更具可读性和可扩展性，也就是说，当下一个开发者接触到这段不是自己写的代码， 他可以更好地利用代码的组织来反转实际的业务逻辑，或者根据业务逻辑更好地理解代码。</p> <p>二是实现代码的逻辑提取和重用，当然mixin逻辑提取和重用也可以实现，但就像我之前说的，多个mixin在作用于同一个组件时，很难看出mixin的属性，来源不明确，另外，多个mixin的属性存在变量命名冲突的风险。而 Composition API 恰恰解决了这两个问题。</p></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8><li class="contact-item" data-v-3d9deeb8><a href="https://github.com/huabingtao" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-3d9deeb8><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-3d9deeb8></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8><li class="copyright-item" data-v-3d9deeb8>MIT Licensed | Copyright © 2020-present HuaBingTao</li></ul></div></footer></div><div class="global-ui"><!----></div></div>
+    <script src="/hbtblog/assets/js/app.3e20466e.js" defer></script><script src="/hbtblog/assets/js/7.0a2fe451.js" defer></script><script src="/hbtblog/assets/js/12.9f29600d.js" defer></script><script src="/hbtblog/assets/js/26.8c7f45f4.js" defer></script>
+  </body>
+</html>
