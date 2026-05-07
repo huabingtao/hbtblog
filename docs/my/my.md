@@ -26,7 +26,7 @@ sidebarDepth: 5
 
 - 前端框架：Vue3/React
 - 前端 ui 框架: Element-ui/Ant-design/iview/Ant-mobile/Taro-ui/Bootstrap
-- 前端工具：Typescript/Webpack/Sass/Less/Styles
+- 前端工具：Typescript/Vite/Webpack5
 - 服务端：Node/Koa2/Express/Nginx
 - 数据库：MySQL
 - 版本管理：Git/Svn
@@ -65,6 +65,19 @@ sidebarDepth: 5
 - 负责静态网页开发及JS动效交互。
 
 ## 项目经历
+
+### 神农天眼app
+
+项目描述:神农天眼APP，是一款核查管理应用软件，主要服务于监管、核查人员进行现场检查信息上报、检查数据查询等工作
+
+技术栈:
+**Uni-app Webview Typescript**
+
+主要内容：
+
+- 使用了vue3 + ts的方式开发app，把基础内容部分抽离为组件通过组件化模块化，减少重复代码，提高开发效率。
+- 引入了leflet.js 地图绘制地块，可对地块进行多选，反选显示当前地区作物等。
+- 活动页使用webview构建减少app打包发版次数，使用uni-bridge进行通信,app端通过@message收到请求调用window.envJs调用app原生功能实现webview和原生交互。
 
 ### 企业级移动端ui组件库(Vinko)
 
