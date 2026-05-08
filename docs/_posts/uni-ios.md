@@ -33,7 +33,7 @@ location: ShangHai
 
 开发证书和发布证书描述文件都申请好应该是这个样子
 
-![](../image//uni-ios/3.png)
+![](../image/uni-ios/3.png)
 
 #### 创建App ID
 
@@ -55,7 +55,7 @@ location: ShangHai
 
 ![](../image/uni-ios/7.png)
 
-![](../image//uni-ios/8.png)
+![](../image/uni-ios/8.png)
 
 ### Android 环境配置
 
@@ -67,23 +67,23 @@ Android平台签名证书(.keystore)生成指南： <https://ask.dcloud.net.cn/a
 
 #### 基础配置
 
-![](../image//uni-ios/9.png)
+![](../image/uni-ios/9.png)
 
 版本号versionCode 前八位代表年月日，后两位代表打包次数
 
 #### APP 图标设置
 
-![](../image//uni-ios/10.png)
+![](../image/uni-ios/10.png)
 
 #### APP启动界面配置
 
-![](../image//uni-ios/11.png)
+![](../image/uni-ios/11.png)
 
 #### App模块配置
 
 注意这个页面用到什么就配置什么不然会影响APP审核
 
-![](../image//uni-ios/12.png)
+![](../image/uni-ios/12.png)
 
 #### App隐私弹框配置
 
@@ -145,40 +145,40 @@ Android平台签名证书(.keystore)生成指南： <https://ask.dcloud.net.cn/a
 
 第一步 点击发行->原生app云打包
 
-![](../image//uni-ios/f1.png)
+![](../image/uni-ios/f1.png)
 
 第二步配置打包变量
 
-![](../image//uni-ios/f2.png)
+![](../image/uni-ios/f2.png)
 
 ##### 运行测试包
 
 打开HbuildX->点击运行->运行到IOS App基座
 
-![](../image//uni-ios/f3.png)
+![](../image/uni-ios/f3.png)
 选择设备->使用自定义基座运行
 
-![](../image//uni-ios/f4.png)
+![](../image/uni-ios/f4.png)
 
 #### 构建生产包
 
 和构建测试包基本差不多，需要变更的就是ios证书的profile文件和密钥证书
 
-![](../image//uni-ios/f5.png)
+![](../image/uni-ios/f5.png)
 
 构建成功后的包在dist目录下release文件夹中
 
-![](../image//uni-ios/f6.png)
+![](../image/uni-ios/f6.png)
 
 #### 上传生产包
 
 上传IOS安装包的方式有很多我们选择通过transporter软件上传，下载transporter并上传安装包
 
-![](../image//uni-ios/f7.png)
+![](../image/uni-ios/f7.png)
 
 确认无误后点击交付，点击交付后刷新后台，一般是5分钟左右就可以出现新的包了。
 
-![](../image//uni-ios/f8.png)
+![](../image/uni-ios/f8.png)
 
 #### App store connect 配置
 
@@ -186,25 +186,25 @@ Android平台签名证书(.keystore)生成指南： <https://ask.dcloud.net.cn/a
 
 只要传6.5和5.5两种尺寸的就可，注意打包的时候千万不能勾选支持ipad选项，不然这里就会要求上传ipad截屏
 
-![](../image//uni-ios/f9.png)
+![](../image/uni-ios/f9.png)
 
 ##### 填写app信息
 
-![](../image//uni-ios/f10.png)
+![](../image/uni-ios/f10.png)
 
 ##### 配置发布方式
 
 自动发布会在审核完成后直接发布，建议选手动发布
 
-![](../image//uni-ios/f11.png)
+![](../image/uni-ios/f11.png)
 
 ##### 配置销售范围
 
-![](../image//uni-ios/f2.png)
+![](../image/uni-ios/f2.png)
 
 ##### 配置隐私政策
 
-![](../image//uni-ios/f13.png)
+![](../image/uni-ios/f13.png)
 
 配置完之后IOS就可以提交审核了，不管审核成功还是失败Apple都会发一封邮件通知你审核结果
 
@@ -212,27 +212,27 @@ Android平台签名证书(.keystore)生成指南： <https://ask.dcloud.net.cn/a
 
 #### 构建测试包
 
-![](../image//uni-ios/a1.png)
+![](../image/uni-ios/a1.png)
 
 构建的包在dist/debug目录下
 
-![](../image//uni-ios/a2.png)
+![](../image/uni-ios/a2.png)
 
 ##### 运行测试包
 
 如果需要运行的话，点击运行 -> 运行到Android App底座
 
-![](../image//uni-ios/a3.png)
+![](../image/uni-ios/a3.png)
 
-![](../image//uni-ios/a4.png)
+![](../image/uni-ios/a4.png)
 
 #### 构建生产包
 
-![](../image//uni-ios/a5.png)
+![](../image/uni-ios/a5.png)
 
 构建后的包在dist目录下release文件夹中
 
-![](../image//uni-ios/a6.png)
+![](../image/uni-ios/a6.png)
 
 构建好安卓包之后就可以在国内的各大手机厂商的应用商店上架了，由于安卓市场平台五花八门就不给大家一一列举了。
 

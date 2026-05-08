@@ -71,3 +71,5 @@ npm run deploy
 ## Deployment Notes
 - The build process requires `NODE_OPTIONS: --openssl-legacy-provider` when using modern Node.js versions due to VuePress v1's dependencies.
 - The `gh-pages` branch is used for hosting the static content.
+- **Vssue Secrets**: The Vssue `clientId` and `clientSecret` are now pulled from environment variables (`VSSUE_CLIENT_ID` and `VSSUE_CLIENT_SECRET`). Ensure these are set in your deployment environment (e.g., GitHub Secrets).
+- **Output Directory**: The built site is generated in the `public/` directory at the root. `deploy.sh` and CI/CD are configured to use this path.
