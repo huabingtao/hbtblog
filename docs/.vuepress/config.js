@@ -52,12 +52,12 @@ module.exports = {
       // Which service you'd like to use
       service: "vssue",
       // The owner's name of repository to store the issues and comments.
-      owner: "You",
+      owner: "huabingtao",
       // The name of repository to store the issues and comments.
-      repo: "Your repo",
+      repo: "hbtblog",
       // The clientId & clientSecret introduced in OAuth2 spec.
-      clientId: "b0a4f179d5e6a65ce11b",
-      clientSecret: "adf8f30c5f505c36bd52d7748ae349317bb46451",
+      clientId: process.env.VSSUE_CLIENT_ID || "",
+      clientSecret: process.env.VSSUE_CLIENT_SECRET || "",
     },
     sidebarDepth: 6,
     displayAllHeaders: false,
