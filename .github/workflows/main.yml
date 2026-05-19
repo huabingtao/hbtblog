@@ -24,6 +24,9 @@ jobs:
           node-version: "22"
           cache: 'yarn'
 
+      - name: Disable Strict SSL
+        run: yarn config set "strict-ssl" false -g
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
