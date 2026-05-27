@@ -13,6 +13,7 @@ cd public
 # echo 'www.example.com' > CNAME
 
 git init
+git checkout -B master
 git add -A
 git commit -m 'deploy'
 
