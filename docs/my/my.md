@@ -20,13 +20,13 @@ sidebarDepth: 5
 
 ## 自我介绍
 
-11 年研发经验的资深前端技术负责人，专注于复杂 Web 应用架构与 AI 创新业务落地。在 Vue3/React 生态、跨端混合开发及前端工程化领域有深厚积淀。**深度实践 LLM 大模型前端工程化**，主导过基于 SSE 的流式对话 Agent、多模态交互及智能辅助决策系统的全链路研发。擅长高性能组件库建设、低代码引擎设计及 Node.js 全栈开发，具备敏锐的业务洞察力，致力于通过技术创新驱动业务增长与提效。
+11 年研发经验的资深前端技术负责人，专注于复杂 Web 应用架构与 AI 创新业务落地。在 Vue3 / React 生态、跨端混合开发及前端工程化领域有深厚积淀。**深度实践 LLM 大模型前端工程化**，主导过基于 SSE 的流式对话 Agent、多模态交互及智能辅助决策系统的全链路研发。擅长高性能组件库建设、低代码引擎设计及 Node.js 全栈开发，具备敏锐的业务洞察力，致力于通过技术创新驱动业务增长与提效。
 
 ## 技能清单
 
 - **AI 与大模型：** 熟悉 LLM 前端工程化落地（Vercel AI SDK、SSE 流式响应）、Agent 智能体架构、多模态交互设计、MCP (Model Context Protocol) 协议接入与工具开发
-- **前端框架与跨端：** 熟练 Vue3 / React 生态体系、Uni-app 跨端开发、混合开发（Hybrid）架构及双向通信优化
-- **工程化与工具：** 熟练掌握 TypeScript、Vite / Webpack5 性能调优、Monorepo 架构、CI/CD 自动化流水线建设
+- **前端框架与跨端：** 熟练 Vue3 / React 生态体系、uni-app 跨端开发、混合开发（Hybrid）架构及双向通信优化
+- **工程化与工具：** 熟练掌握 TypeScript、Vite / Webpack 5 性能调优、Monorepo 架构、CI/CD 自动化流水线建设
 - **UI 与交互：** Tailwind CSS、Element-Plus / Ant-Design、低代码引擎设计、复杂数据可视化 (ECharts / Leaflet)
 - **服务端全栈：** Node.js (Koa2/Express)、MySQL 数据库设计、Redis 缓存、Nginx 配置与性能调优
 - **质量保障：** Jest / Vitest 单元测试、Testing-library、E2E 测试、严谨的代码规范与协同流程
@@ -35,7 +35,7 @@ sidebarDepth: 5
 
 ### 上海左岸芯慧电子科技有限公司（2023 年 2 月 ～ 至今）
 **前端技术负责人 / AI 创新业务落地**
-- 主导公司前端架构演进与多端选型（App、H5、Web），制定高可用研发标准，显著提升多端协同研发效能。
+- 主导公司前端架构演进与多端选型（App、H5、Web），制定高可用研发标准，多端研发协同效率提升 25% 以上。
 - **核心推动 AI 战略落地**：主导研发「神农帮智能助手」，实现 AI 智能诊断与数字孪生大屏的深度互操作，大幅降低业务人员现场核查与诊断的准入门槛与时间成本。
 - 深度优化 Hybrid 应用架构：设计并实现高性能跨端通信层，提升 App 与内嵌 H5 的渲染性能与双向通信效率。
 
@@ -68,11 +68,11 @@ sidebarDepth: 5
 **项目描述:** 
 服务于农业监管、核查人员的移动端应用，集成地块巡查、任务分发、空间测绘与现场取证等核心功能，实现数字化监管闭环。
 
-**技术栈:** **Uni-app / Vue3 / TypeScript / Pinia / Vite / Leaflet.js / Webview**
+**技术栈:** **uni-app / Vue3 / TypeScript / Pinia / Vite / Leaflet.js / Webview**
 
 **主要贡献：**
 - **技术架构重构与组件化**：基于 Vue3 Composition API + TypeScript 对业务模块进行深度重构，独立封装 za 系列原子组件及核心通用 Hooks，使代码复用率提升 40% 以上，显著降低耦合度。
-- **自研跨端通信桥接层**：针对地图高频迭代与 App 发版周期的矛盾，设计 Webview 嵌套 H5 架构，通过封装通信链路层，使 H5 无缝调用原生 GPS 定位、相册、文件上传等 API，实现业务逻辑的热更新。
+- **自研跨端通信桥接层**：针对地图高频迭代与 App 发版周期的矛盾，设计 Webview 嵌套 H5 架构，通过封装通信链路层，使 H5 无缝调用 uni-app 原生的 API（如 GPS 定位、相册、uni.uploadFile 文件上传等），从而将高频迭代的业务与 App 发版解耦。
 - **复杂地理数据渲染优化**：在 Webview 侧深度集成 Leaflet.js，实现了海量地块矢量数据的平滑渲染与多维空间交互（绘制、多选、GPS 校验），大幅提升野外作业效率。
 
 ### 神农口袋 App (混合开发)
@@ -83,7 +83,7 @@ sidebarDepth: 5
 
 **主要贡献：**
 - **高性能跨端通信方案**：在 APICloud + Vue2 架构下，通过深度封装 Event 驱动的发布订阅模式，解决了跨页面状态同步与冗余请求的痛点，确保资产数据的一致性。
-- **地图可视化性能调优**：针对复杂地块的多维度渲染需求，设计高效的数据过滤与分级渲染算法，在低端移动设备上依然保持流畅的地图交互体验。
+- **地图可视化性能调优**：针对复杂地块的多维度渲染需求，设计高效的数据过滤与分级渲染算法，在低端设备上保持地图拖拽帧率 55FPS 以上，图层渲染时间缩短 40%，在低端移动设备上依然保持流畅的地图交互体验。
 - **区块链溯源全链路闭环**：打通扫码模块与后端区块链存证接口，实现了农产品从生长环境到流通记录的全生命周期可视化展示，增强产品信任背书。
 
 ### 企业级移动端 UI 组件库 (Vinko)
@@ -95,17 +95,17 @@ sidebarDepth: 5
 **主要贡献:**
 - **工业级工程化基建**：基于 React Hooks + TypeScript 研发，支持按需引入（Tree-shaking）与多端主题自由定制，赋能 10+ 核心业务。
 - **规范化开发流程与文档**：利用 Dumi 构建交互式文档系统，通过 Git Hooks (Husky + Commitlint) 强制代码质量约束，确保组件的健壮性。
-- **自动化测试保障**：利用 Jest 与 React Testing Library 实现核心逻辑与 UI 交互的自动化单元测试覆盖，大幅降低大规模集成下的回归风险。
+- **自动化测试保障**：利用 Jest 与 React Testing Library 实现核心逻辑与 UI 交互的自动化单元测试覆盖，单元测试覆盖率达 85% 以上，大幅降低大规模集成下的回归风险。
 
 ## 技术文章
 
 - *《从 0 到 1：前端 CI/CD 实战》系列教程* (https://huabingtao.github.io/hbtblog/)
 - *《手把手教你把公司老项目从 webpack 3 升级到 webpack 5》* (https://juejin.cn/post/7301204029597958198)
-- *《使用 uni-app 开发 APP 并上架 IOS 全过程》* (https://juejin.cn/post/7379958888909029395)
+- *《使用 uni-app 开发 APP 并上架 iOS 全过程》* (https://juejin.cn/post/7379958888909029395)
 - *《基于 vuepress 搭建博客教程 + 自动化部署 GitHub Actions》* (https://juejin.cn/post/6936843142293356558)
-- *《从零配置 Eslint + Prettier + husky + lint-staged 构建前端代码工作流》* (https://juejin.im/post/5ea68dbce51d4546df73ad17)
-- *《React + node + koa2 打造日记本应用 进阶大前端》*(https://juejin.im/post/5e3588cae51d4502671a43b1)
-- *《朴实无华加 JavaScript 闭包》*(https://juejin.im/post/5f0eddf5e51d45347246b82c)
+- *《从零配置 Eslint + Prettier + husky + lint-staged 构建前端代码工作流》* (https://juejin.cn/post/5ea68dbce51d4546df73ad17)
+- *《React + node + koa2 打造日记本应用 进阶大前端》*(https://juejin.cn/post/5e3588cae51d4502671a43b1)
+- *《朴实无华加 JavaScript 闭包》*(https://juejin.cn/post/5f0eddf5e51d45347246b82c)
 
 # 致谢
 
