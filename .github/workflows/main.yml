@@ -22,17 +22,17 @@ jobs:
         with:
           # 选择要使用的 node 版本
           node-version: "22"
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Disable Strict SSL
-        run: yarn config set "strict-ssl" false -g
+        run: npm config set strict-ssl false -g
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: yarn docs:build
+        run: npm run docs:build
         env:
           NODE_OPTIONS: --openssl-legacy-provider
           VSSUE_CLIENT_ID: ${{ secrets.VSSUE_CLIENT_ID }}
